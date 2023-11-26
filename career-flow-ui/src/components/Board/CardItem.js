@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { BoardContext } from "./Board";
 import TaskForm from "./New Task/TaskForm";
-import { Card, CardContent, Typography, IconButton, CardActions, Divider, Box } from "@mui/material";
+import { Card, CardContent, Typography, IconButton, CardActions, Divider, Box, Stack } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
@@ -142,34 +142,33 @@ function CardItem(props) {
     setShow(false);
     submitProps.resetForm();
 
-  
+
   };
 
   const handleNoteChange = (event, index) => {
-    // const updatedNotes = [...notes];
-    // updatedNotes[index] = event.target.value;
-    // setNotes(updatedNotes);
+    const updatedNotes = [...notes];
+    updatedNotes[index] = event.target.value;
+    setNotes(updatedNotes);
   };
 
   const handleAddNote = () => {
-    // const updatedNotes = [...notes, ""];
-    // setNotes(updatedNotes);
+    const updatedNotes = [...notes, ""];
+    setNotes(updatedNotes);
   };
 
   const handleSaveNotes = () => {
-    // Logic to save notes via API or update context state
-    // For example:
-    // axios.put(`/applications/${props.task.id}`, { notes: notes }, {
-    //   headers: {
-    //     Authorization: "Bearer " + props.state.token,
-    //   }
-    // })
-    // .then(response => {
-    //   // Handle success
-    // })
-    // .catch(error => {
-    //   // Handle error
-    // });
+    
+    axios.put(`/applications/${props.task.id}`, { notes: notes }, {
+      headers: {
+        Authorization: "Bearer " + props.state.token,
+      }
+    })
+    .then(response => {
+      // Handle success
+    })
+    .catch(error => {
+      // Handle error
+    });
 
     handleCloseNotesModal();
   };
@@ -196,11 +195,11 @@ function CardItem(props) {
           </Typography>
         </CardContent>
         <Box style={{ position: 'relative' }}>
-          <IconButton onClick={handleOpenNotesModal} style={{ position: 'absolute', bottom: 10, right: 8,}}>
+          <IconButton onClick={handleOpenNotesModal} style={{ position: 'absolute', bottom: 10, right: 8, }}>
             <DescriptionIcon className={classes.smallIcon} />
           </IconButton>
         </Box>
-        
+
         <CardActions className={classes.cardActions}>
           <IconButton onClick={() => clickHandler("edit")} aria-label="edit">
             <EditIcon className={classes.smallIcon} />
@@ -238,7 +237,7 @@ function CardItem(props) {
         </DialogActions>
       </Dialog>
 
-      <Dialog open={showNotesModal} onClose={handleCloseNotesModal}>
+      <Dialog open={showNotesModal} onClose={handleCloseNotesModal} >
         <DialogTitle align='center' fontWeight='bold'>Notes</DialogTitle>
         <Divider />
         <DialogContent>
@@ -258,7 +257,10 @@ function CardItem(props) {
                   justifyContent="center"
                   onClick={(e) => handleNoteChange(e, index)}
                 >
-                  <Typography color="#bdbdbd" variant="h6">+</Typography>
+                  <TextField placeholder="                 +" variant="standard"
+                    InputProps={{
+                      disableUnderline: true,
+                    }}></TextField>
                 </Box>
               )}
             </Box>

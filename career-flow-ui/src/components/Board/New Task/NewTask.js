@@ -44,7 +44,8 @@ function NewTask(props) {
         companyName: values["companyName"],
         date: values["date"],
         jobLink: values["jobLink"],
-        location: values["location"]
+        location: values["location"],
+        notes: null
       },
     })
       .then((response) => {

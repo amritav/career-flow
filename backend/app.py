@@ -199,6 +199,7 @@ def create_app():
                 "jobLink": request.json.get('jobLink', None),
                 "location": request.json.get('location', None),
                 "stage": request.json.get("status", "1"),
+                "notes": None,
             }
             applications = user["applications"] + [current_application]
             user["applications"] = applications
@@ -261,6 +262,30 @@ def create_app():
         except Exception as e:
             print(e)
             return jsonify({"error": "Internal server error"}), 500
+        
+    @app.route("/applications/<application_id>/notes", methods=["PUT"])
+    @jwt_required()
+    def update_application_notes(application_id):
+        try:
+            current_user_email = get_jwt_identity()
+            user = User.objects(email=current_user_email).first()
+
+            if not user:
+                return jsonify({"error": "User not found"}), 404
+        
+            # Find the application in the user's applications list
+            application_to_update = next((app for app in user.applications if app.get('id') == application_id), None)
+
+            if not application_to_update:
+                return jsonify({"error": "Application not found"}), 404
+
+            # Update notes for the application
+            application_to_update['notes'] = request.json.get('notes')
+            user.save()
+
+            return jsonify(application_to_update), 200
+        except Exception as ex:
+            return jsonify({"error": str(ex)}), 500
 
     @app.route("/resume", methods=["POST"])
     @jwt_required()
