@@ -4,28 +4,35 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./NewTask.css";
 import DatePicker from "react-datepicker";
+import moment from 'moment';
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const validationSchema = Yup.object().shape({
   jobTitle: Yup.string().required("Job Title is required"),
   companyName: Yup.string().required("Company Name is required"),
-  date: Yup.date().nullable().required("Date is required"),
   jobLink: Yup.string().required("Job link is required"),
   location: Yup.string().required("Location is required")
 });
+
+
+const convertDateToYyyyMmDd = (date) => {
+  if (!date) return '';
+  return moment(date, 'DD/MM/YYYY').format('YYYY-MM-DD');
+};
 
 function TaskForm(props) {
   return (
     <>
       <Formik
-        initialValues={props.editedValues|| props.initialValues}
+        initialValues={props.editedValues || props.initialValues}
         validationSchema={validationSchema}
         onSubmit={props.onSubmit}
         setValues={props.setValues}
         enableReinitialize
       >
         {(formik) => {
+          console.log("Formik values:", formik.values);
           return (
             <Modal show={props.show} onHide={props.handleClose} centered>
               <Modal.Header style={{ justifyContent: "center" }}>
@@ -72,13 +79,11 @@ function TaskForm(props) {
                     <FormLabel>Date</FormLabel>
 
                     <DatePicker
-                      selected={formik.values.startDate}
                       name="date"
                       id="date"
                       onBlur={formik.handleBlur}
-                      onChange={(date) =>
-                        formik.setFieldValue("date", date)
-                      }
+                      selected={formik.values.date ? moment.utc(formik.values.date, 'YYYY-MM-DD').local().toDate() : null}
+                      onChange={(date) => formik.setFieldValue("date", date ? moment(date).format('YYYY-MM-DD') : '')}
                       className={`form-control ${formik.touched.date && formik.errors.date
                           ? "is-invalid"
                           : ""

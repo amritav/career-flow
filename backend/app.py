@@ -181,6 +181,7 @@ def create_app():
             users = Users.objects()
             user = users.filter(email=current_user_email).first()
             print("User: ------ ", user.email)
+            print(request.json.get('date', None))
             current_application = {
                 "id": get_new_application_id(user),
                 "jobTitle": request.json.get('jobTitle', None),

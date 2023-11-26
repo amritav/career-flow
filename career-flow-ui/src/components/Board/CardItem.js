@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
 import axios from 'axios';
+import moment from 'moment';
 
 
 const useStyles = makeStyles({
@@ -46,7 +47,7 @@ const initialEditedValues = {
   id: "",
   jobTitle: "",
   companyName: "",
-  date: new Date(),
+  date: moment.utc(new Date(), 'YYYY-MM-DD').local().toDate(),
   jobLink: "",
   location: ""
 };
