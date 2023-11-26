@@ -296,34 +296,33 @@ def delete_application(application_id):
         print(e)
         return jsonify({"error": "Internal server error"}), 500
         
-    @app.route("/applications/<application_id>/notes", methods=["PUT"])
-    @jwt_required()
-    def update_application_notes(application_id):
-        try:
-            current_user_email = get_jwt_identity()
-            user = Users.objects(email=current_user_email).first()
+@app.route("/applications/<application_id>/notes", methods=["PUT"])
+@jwt_required()
+def update_application_notes(application_id):
+    try:
+        current_user_email = get_jwt_identity()
+        user = Users.objects(email=current_user_email).first()
 
-            if not user:
-                return jsonify({"error": "User not found"}), 404
+        if not user:
+            return jsonify({"error": "User not found"}), 404
 
-            # Parse the application ID as an integer or appropriate format
-            application_id = int(application_id)
+        # Parse the application ID as an integer or appropriate format
+        application_id = int(application_id)
 
-            # Find the application in the user's applications list
-            application_to_update = next((app for app in user.applications if app.get('id') == application_id), None)
+        # Find the application in the user's applications list
+        application_to_update = next((app for app in user.applications if app.get('id') == application_id), None)
 
-            if not application_to_update:
-                return jsonify({"error": "Application not found"}), 404
+        if not application_to_update:
+            return jsonify({"error": "Application not found"}), 404
 
-            # Update the note for the application
-            # Here we assume that 'notes' field in your request is a string, not an array
-            note = request.json.get('notes')
-            application_to_update['notes'] = note
-            user.save()
+        # Update the note for the application
+        note = request.json.get('notes')
+        application_to_update['notes'] = note
+        user.save()
 
-            return jsonify(application_to_update), 200
-        except Exception as ex:
-            return jsonify({"error": str(ex)}), 500
+        return jsonify(application_to_update), 200
+    except Exception as ex:
+        return jsonify({"error": str(ex)}), 500
 
 @app.route("/resume", methods=["POST"])
 @jwt_required()

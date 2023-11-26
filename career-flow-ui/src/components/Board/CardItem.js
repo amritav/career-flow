@@ -150,11 +150,6 @@ function CardItem(props) {
     setNotes(event.target.value);
   };
 
-  const handleAddNote = () => {
-    const updatedNotes = [...notes, ""];
-    setNotes(updatedNotes);
-  };
-
   const handleSaveNotes = () => {
     axios.put(`/applications/${props.task.id}/notes`, { notes: notes }, {
       headers: {
