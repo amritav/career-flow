@@ -45,8 +45,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 - [How to Contribute](#how-to-contribute)
 - [Team Members](#team-members)
 - [Recommended citation](#recommended-citation)
-
-
+- [License](#license)
 
 ## Basic Design:
 ![Basic Design](https://github.com/prithvish-doshi-17/application-tracking-system/blob/main/resources/Overall%20Design.PNG)
@@ -347,7 +346,7 @@ If you have any questions, need help, or want to provide feedback about the J-Tr
 
 Your inquiries and suggestions are always welcome!
 
-## Contributors
+## Team Members
 <center>
   <table>
     <tr>
@@ -363,8 +362,8 @@ Your inquiries and suggestions are always welcome!
   Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/career-flow/blob/main/Contributing.md) file for instructions on how to contribute to our repository.
 
 ## Recommended Citation
-J-Tracker 2.0 Amogh Mahesh, Aditya Chitlangia, Abhishek Arun Sheth, Sachin Rudrappa Doddaguni. 2023.
-[https://github.com/sachindoddaguni/application-tracking-system]
+Career Flow Nirmal Sharon Joji, Adithya Kiran, Amrita Visalam, Diksha Maurya. 2023.
+[https://github.com/adi-kiran/career-flow]
 
 ## License
 The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
