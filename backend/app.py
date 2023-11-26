@@ -57,28 +57,28 @@ existing_endpoints = ["/applications", "/resume", "/dashboard", "/contacts", "/t
 
 
 
-def create_app():
-    """
-    Creates a server hosted on localhost
+# def create_app():
+#     """
+#     Creates a server hosted on localhost
 
-    :return: Flask object
-    """
-    app = Flask(__name__)
-    app.secret_key = 'secret'
-    app.config["JWT_SECRET_KEY"] = "softwareEngineering"
-    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
-    # make flask support CORS
-    CORS(app)
-    app.config['MAIL_SERVER'] = 'smtp.mail.yahoo.com'
-    app.config['MAIL_PORT'] = 587
-    app.config['MAIL_USERNAME'] = 'contactus_burnout@yahoo.com'  # Your Gmail email address
-    app.config['MAIL_PASSWORD'] = 'fpfkvuxxubnmzahw'  # Your Gmail password or app-specific password
-    app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USE_SSL'] = False
+#     :return: Flask object
+#     """
+#     app = Flask(__name__)
+#     app.secret_key = 'secret'
+#     app.config["JWT_SECRET_KEY"] = "softwareEngineering"
+#     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+#     # make flask support CORS
+#     CORS(app)
+#     app.config['MAIL_SERVER'] = 'smtp.mail.yahoo.com'
+#     app.config['MAIL_PORT'] = 587
+#     app.config['MAIL_USERNAME'] = 'contactus_burnout@yahoo.com'  # Your Gmail email address
+#     app.config['MAIL_PASSWORD'] = 'fpfkvuxxubnmzahw'  # Your Gmail password or app-specific password
+#     app.config['MAIL_USE_TLS'] = True
+#     app.config['MAIL_USE_SSL'] = False
         
-    return app
+#     return app
 
-app = create_app()
+# app = create_app()
 # with open("application.yml") as f:
 #     info = yaml.load(f, Loader=yaml.FullLoader)
 #     username = info["username"]
@@ -88,6 +88,19 @@ app = create_app()
 #         # "host": os.getenv("db_username"),
 #         "host": "localhost",
 #     }
+
+app = Flask(__name__)
+app.secret_key = 'secret'
+app.config["JWT_SECRET_KEY"] = "softwareEngineering"
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+# make flask support CORS
+CORS(app)
+app.config['MAIL_SERVER'] = 'smtp.mail.yahoo.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'contactus_burnout@yahoo.com'  # Your Gmail email address
+app.config['MAIL_PASSWORD'] = 'fpfkvuxxubnmzahw'  # Your Gmail password or app-specific password
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 
 app.config["MONGODB_SETTINGS"] = {
         "db": "appTracker",
@@ -223,12 +236,14 @@ def add_application():
             "id": get_new_application_id(user),
             "jobTitle": request.json.get('jobTitle', None),
             "companyName": request.json.get('companyName', None),
-            "date": request.json.get('date', None)[:10],
+            "date": request.json.get('date', None),
             "jobLink": request.json.get('jobLink', None),
             "location": request.json.get('location', None),
             "stage": request.json.get("status", "1"),
-                "notes": "",
+            "notes": "",
         }
+        if current_application["date"]:
+            current_application["date"] = current_application["date"][:10]
         applications = user["applications"] + [current_application]
         user["applications"] = applications
         user.save()
@@ -459,7 +474,7 @@ def get_dashboard_data():
         print("Task 3/3: Getting latest 4 applications")
         last_four_apps = get_last_four_jobs(applications)
         contacts_saved = len(user["contacts"])
-        notes_taken = len([1 for app in applications if "notes" in app and len(app["notes"]>0)])
+        notes_taken = len([1 for app in applications if "notes" in app and len(app["notes"])>0])
         return jsonify({
             "six_months_jobs_count": six_months_job_count,
             "job_applications_status": job_app_status,
@@ -626,10 +641,7 @@ def email_reminders():
                     send_email(to_email, subject, message)
                 except:
                     return jsonify({"error": "EMAIL wasn't sent"}), 400
-                
-sched = BackgroundScheduler(daemon=True)
-sched.add_job(email_reminders,'interval',minutes=60)
-sched.start()
+
 def generate_pdf(data):
     doc = Document()
 
@@ -851,7 +863,10 @@ def get_last_four_jobs(applications):
     return res
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
+    sched = BackgroundScheduler(daemon=True)
+    sched.add_job(email_reminders,'interval',minutes=60)
+    sched.start()
 
 # if __name__ == "__main__":
 #     app.run()
