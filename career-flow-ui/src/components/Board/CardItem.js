@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
 import { BoardContext } from "./Board";
 import TaskForm from "./New Task/TaskForm";
-import { Card, CardContent, Typography, IconButton, CardActions, Divider, Box } from "@mui/material";
+import { Card, CardContent, Typography, IconButton, CardActions, Divider, Box, Stack } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
 import axios from 'axios';
 import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
+import DescriptionIcon from '@mui/icons-material/Description';
 import moment from 'moment';
 
 
@@ -65,6 +66,12 @@ function CardItem(props) {
 
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
+
+  const [showNotesModal, setShowNotesModal] = useState(false);
+  const [notes, setNotes] = useState(props.task.notes || '');
+
+  const handleOpenNotesModal = () => setShowNotesModal(true);
+  const handleCloseNotesModal = () => setShowNotesModal(false);
 
 
   const handleShare = () => {
@@ -135,8 +142,29 @@ function CardItem(props) {
     updateTask(values); // Call the updateTask function with the new values
     setShow(false);
     submitProps.resetForm();
+
+
   };
 
+  const handleNoteChange = (event) => {
+    setNotes(event.target.value);
+  };
+
+  const handleSaveNotes = () => {
+    axios.put(`/applications/${props.task.id}/notes`, { notes: notes }, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    })
+    .then(response => {
+      console.log('Notes updated successfully');
+      handleCloseNotesModal();
+    })
+    .catch(error => {
+      console.error('Error updating notes:', error);
+    });
+  };
+  
   return (
     <>
       <TaskForm
@@ -158,6 +186,12 @@ function CardItem(props) {
             Date: {formateDate(new Date(props.task.date))}
           </Typography>
         </CardContent>
+        <Box style={{ position: 'relative' }}>
+          <IconButton onClick={handleOpenNotesModal} style={{ position: 'absolute', bottom: 10, right: 8, }}>
+            <DescriptionIcon className={classes.smallIcon} />
+          </IconButton>
+        </Box>
+
         <CardActions className={classes.cardActions}>
           <IconButton onClick={() => clickHandler("edit")} aria-label="edit">
             <EditIcon className={classes.smallIcon} />
@@ -194,6 +228,25 @@ function CardItem(props) {
           <Button variant="contained" onClick={handleShare}>Send</Button>
         </DialogActions>
       </Dialog>
+
+      <Dialog open={showNotesModal} onClose={handleCloseNotesModal} fullWidth maxWidth="xs">
+      <DialogTitle align='center' fontWeight='bold'>Notes</DialogTitle>
+      <Divider />
+      <DialogContent>
+        <TextField
+          fullWidth
+          multiline={true}
+          rows={3}
+          placeholder="Add Note"
+          value={notes}
+          onChange={handleNoteChange}
+        />
+      </DialogContent>
+      <DialogActions>
+        <Button variant="outlined" onClick={handleCloseNotesModal}>Cancel</Button>
+        <Button variant="contained" onClick={handleSaveNotes}>Save</Button>
+      </DialogActions>
+    </Dialog>
 
     </>
   );
