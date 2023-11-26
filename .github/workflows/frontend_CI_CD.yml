@@ -6,6 +6,8 @@ on:
       - "main"
     paths:   
       - 'career-flow-ui/**'
+    schedule: 
+      - cron: '0 0 * * *'  
 
 jobs:
   build:
