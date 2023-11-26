@@ -64,7 +64,7 @@ function NewTask(props) {
 
   return (
     <>
-      <Button variant="contained" style={{ backgroundColor: "#d32f2f", color: "whitesmoke" }} onClick={handleShow}>
+      <Button variant="danger" size="sm" onClick={handleShow}>
         NEW TASK
       </Button>
       {show && 

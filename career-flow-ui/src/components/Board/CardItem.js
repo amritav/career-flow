@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { BoardContext } from "./Board";
 import TaskForm from "./New Task/TaskForm";
-import { Card, CardContent, Typography, IconButton, CardActions } from "@mui/material";
+import { Card, CardContent, Typography, IconButton, CardActions, Divider, Box } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { makeStyles } from '@mui/styles';
 import axios from 'axios';
+import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@mui/material';
+import ShareIcon from '@mui/icons-material/Share';
 
 
 const useStyles = makeStyles({
@@ -23,7 +25,7 @@ const useStyles = makeStyles({
     backgroundColor: 'rgba(255, 255, 255, 0.9)' // Optional: add background for visibility
   },
   smallIcon: {
-    fontSize: '16px' 
+    fontSize: '16px'
   }
 });
 
@@ -57,6 +59,32 @@ function CardItem(props) {
   const [editedValues, setFormValues] = useState(initialEditedValues);
   const { taskState, onDeletingTask, onUpdatingTask } = useContext(BoardContext);
 
+  const [email, setEmail] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
+
+  const handleShare = () => {
+    // API call to backend with email and task details
+    axios.post('/sendEmail', {
+      email: email,
+      taskDetails: props.task
+    }, {
+      headers: {
+        'Authorization': "Bearer " + localStorage.getItem("token") // Attach the Authorization header
+      }
+    }).then(response => {
+      // Handle success
+      console.log('Email sent successfully');
+      handleCloseModal();
+    }).catch(error => {
+      // Handle error
+      console.error('Error sending email', error);
+    });
+  };
+
   const handleClose = () => setShow(false);
 
   const deleteTask = (taskId) => {
@@ -65,13 +93,13 @@ function CardItem(props) {
         Authorization: "Bearer " + localStorage.getItem("token"),
       }
     })
-    .then(response => {
-      console.log('Task deleted:', response);
-      onDeletingTask(taskId); // existing function to update the state
-    })
-    .catch(error => {
-      console.error('Error deleting task:', error);
-    });
+      .then(response => {
+        console.log('Task deleted:', response);
+        onDeletingTask(taskId); // existing function to update the state
+      })
+      .catch(error => {
+        console.error('Error deleting task:', error);
+      });
   };
 
   const updateTask = (updatedTask) => {
@@ -80,13 +108,13 @@ function CardItem(props) {
         Authorization: "Bearer " + props.state.token,
       }
     })
-    .then(response => {
-      onUpdatingTask(response.data); // Update the state in the context
-    })
-    .catch(error => console.error('Error updating task:', error));
+      .then(response => {
+        onUpdatingTask(response.data); // Update the state in the context
+      })
+      .catch(error => console.error('Error updating task:', error));
   };
 
-  
+
   const handleShow = () => {
     setShow(true);
   };
@@ -136,8 +164,36 @@ function CardItem(props) {
           <IconButton onClick={() => clickHandler("delete")} aria-label="delete">
             <DeleteIcon className={classes.smallIcon} />
           </IconButton>
+          <IconButton onClick={handleOpenModal} aria-label="share">
+            <ShareIcon className={classes.smallIcon} />
+          </IconButton>
         </CardActions>
       </Card>
+
+      <Dialog open={openModal} onClose={handleCloseModal} >
+        <DialogTitle align='center' fontWeight='bold'>Share Task</DialogTitle>
+        <Divider />
+        <DialogContent>
+          <Box display="flex">
+            <Typography sx={{ mt: 1.5 }}>Enter Email Address: </Typography>
+            <TextField
+              autoFocus
+              margin="dense"
+              label="Email Address"
+              type="email"
+              fullWidth
+              variant="outlined"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button variant="outlined" onClick={handleCloseModal}>Cancel</Button>
+          <Button variant="contained" onClick={handleShare}>Send</Button>
+        </DialogActions>
+      </Dialog>
+
     </>
   );
 }
