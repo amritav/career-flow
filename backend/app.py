@@ -199,7 +199,7 @@ def create_app():
                 "jobLink": request.json.get('jobLink', None),
                 "location": request.json.get('location', None),
                 "stage": request.json.get("status", "1"),
-                "notes": (''),
+                "notes": "",
             }
             applications = user["applications"] + [current_application]
             user["applications"] = applications
@@ -268,19 +268,24 @@ def create_app():
     def update_application_notes(application_id):
         try:
             current_user_email = get_jwt_identity()
-            user = User.objects(email=current_user_email).first()
+            user = Users.objects(email=current_user_email).first()
 
             if not user:
                 return jsonify({"error": "User not found"}), 404
-        
+
+            # Parse the application ID as an integer or appropriate format
+            application_id = int(application_id)
+
             # Find the application in the user's applications list
             application_to_update = next((app for app in user.applications if app.get('id') == application_id), None)
 
             if not application_to_update:
                 return jsonify({"error": "Application not found"}), 404
 
-            # Update notes for the application
-            application_to_update['notes'] = request.json.get('notes')
+            # Update the note for the application
+            # Here we assume that 'notes' field in your request is a string, not an array
+            note = request.json.get('notes')
+            application_to_update['notes'] = note
             user.save()
 
             return jsonify(application_to_update), 200

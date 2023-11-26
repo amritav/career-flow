@@ -67,7 +67,7 @@ function CardItem(props) {
   const handleCloseModal = () => setOpenModal(false);
 
   const [showNotesModal, setShowNotesModal] = useState(false);
-  const [notes, setNotes] = useState(props.task.notes || []);
+  const [notes, setNotes] = useState(props.task.notes || '');
 
   const handleOpenNotesModal = () => setShowNotesModal(true);
   const handleCloseNotesModal = () => setShowNotesModal(false);
@@ -145,10 +145,8 @@ function CardItem(props) {
 
   };
 
-  const handleNoteChange = (event, index) => {
-    const updatedNotes = [...notes];
-    updatedNotes[index] = event.target.value;
-    setNotes(updatedNotes);
+  const handleNoteChange = (event) => {
+    setNotes(event.target.value);
   };
 
   const handleAddNote = () => {
@@ -157,22 +155,20 @@ function CardItem(props) {
   };
 
   const handleSaveNotes = () => {
-
-    axios.put(`/applications/${props.task.id}`, { notes: notes }, {
+    axios.put(`/applications/${props.task.id}/notes`, { notes: notes }, {
       headers: {
-        Authorization: "Bearer " + props.state.token,
+        Authorization: "Bearer " + localStorage.getItem("token"),
       }
     })
-      .then(response => {
-        // Handle success
-      })
-      .catch(error => {
-        // Handle error
-      });
-
-    handleCloseNotesModal();
+    .then(response => {
+      console.log('Notes updated successfully');
+      handleCloseNotesModal();
+    })
+    .catch(error => {
+      console.error('Error updating notes:', error);
+    });
   };
-
+  
   return (
     <>
       <TaskForm
@@ -238,46 +234,23 @@ function CardItem(props) {
       </Dialog>
 
       <Dialog open={showNotesModal} onClose={handleCloseNotesModal} fullWidth maxWidth="xs">
-        <DialogTitle align='center' fontWeight='bold'>Notes</DialogTitle>
-        <Divider />
-        <DialogContent>
-          {notes.map((note, index) => (
-            <Box key={index} marginBottom={2}>
-              {note ? (
-                <Box padding={1} borderRadius={4}>
-                  <Typography>{note}</Typography>
-                </Box>
-              ) : (
-                // <Box
-                //   border="2px dashed #bdbdbd"
-                //   borderRadius={4}
-                //   minHeight={50}
-                //   display="flex"
-                //   alignItems="center"
-                //   justifyContent="center"
-                //   onClick={(e) => handleNoteChange(e, index)}
-                // >
-                <TextField fullWidth multiline={true} rows={3} placeholder="Add Note" 
-                // variant="standard"
-                // InputProps={{
-                //   disableUnderline: true,
-                // }}
-                >
-
-                </TextField>
-                // </Box>
-              )}
-            </Box>
-          ))}
-          <IconButton onClick={handleAddNote} aria-label="add-note">
-            <DescriptionIcon className={classes.smallIcon} />
-          </IconButton>
-        </DialogContent>
-        <DialogActions>
-          <Button variant="outlined" onClick={handleCloseNotesModal}>Cancel</Button>
-          <Button variant="contained" onClick={handleSaveNotes}>Save</Button>
-        </DialogActions>
-      </Dialog>
+      <DialogTitle align='center' fontWeight='bold'>Notes</DialogTitle>
+      <Divider />
+      <DialogContent>
+        <TextField
+          fullWidth
+          multiline={true}
+          rows={3}
+          placeholder="Add Note"
+          value={notes}
+          onChange={handleNoteChange}
+        />
+      </DialogContent>
+      <DialogActions>
+        <Button variant="outlined" onClick={handleCloseNotesModal}>Cancel</Button>
+        <Button variant="contained" onClick={handleSaveNotes}>Save</Button>
+      </DialogActions>
+    </Dialog>
 
     </>
   );
