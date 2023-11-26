@@ -30,7 +30,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
 - [Successful Usecases](#successful-usecases)
 - [Future Scope](#future-scope)
 - [Explanation](#explanation)
-- [Technologies Used](#technologies-used)
+- [Project TechStack](#project-techstack)
 - [Installation](#installation)
     + [Requirements](#requirements)
     + [Strongly Recommended](#strongly-recommended)
@@ -39,7 +39,6 @@ Our application keeps track of the jobs you've added to your wish list. It also 
     + [Shutdown](#shutdown)
 - [Hosting the Database](#hosting-the-database)
     + [Local MongoDB](#local-mongodb)
-    + [Hosted database with MongoDB Atlas](#hosted-database-with-mongodb-atlas)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
@@ -223,12 +222,14 @@ Currently, we have four fundamental steps in our project:
 
 Any details in any table can be modified at any time during the process.
 
-## Technologies Used:
 
-* Python
-* Node.Js
-* Flask
-* MongoDB
+
+# Project TechStack
+
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="html" width="20" height="20"> React </br>
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
+
 
 ## Installation:
 ### Requirements:
@@ -273,24 +274,6 @@ mongod
 ```
 * Recommended: Use a GUI such as [Studio 3T](https://studio3t.com/download/) to more easily interact with the database
 
-
-### Hosted database with MongoDB Atlas:
-1. [Create account](https://account.mongodb.com/account/register) for MongoDB
- 
-** ___If current MongoDB Atlas owner adds your username/password to the cluster, skip to step 4___ **
-
-2. Follow MongoDB Atlas [Setup Guide](https://docs.atlas.mongodb.com/getting-started/) to create a database collection for hosting applications
-3. In  ```app.py```  set  ```'host'```  string to your MongoDB Atlas connection string
-4. Create an  ```application.yml```  file in the /backend directory with the specifications:
-```
-username: <MongoDB Atlas cluster username>
-password: <MongoDB Atlas cluster password>
-```
-5. For testing through CI to function as expected, repository secrets will need to be added through the settings. Create individual secrets with the following keys/values:
-```
-MONGO_USER: <MongoDB Atlas cluster username>
-MONGO_PASS: <MongoDB Atlas cluster password>
-```
 
 ## Troubleshooting
 
