@@ -27,9 +27,9 @@ function TaskForm(props) {
       >
         {(formik) => {
           return (
-            <Modal show={props.show} onHide={props.handleClose}>
-              <Modal.Header closeButton>
-          <Modal.Title>{props.taskState} Task</Modal.Title>
+            <Modal show={props.show} onHide={props.handleClose} centered>
+              <Modal.Header style={{ justifyContent: "center" }}>
+                <Modal.Title style={{ fontWeight: "bold" }}>{props.taskState} Task</Modal.Title>
               </Modal.Header>
               <Form>
                 <Modal.Body>
@@ -39,11 +39,10 @@ function TaskForm(props) {
                       type="text"
                       id="jobTitle"
                       name="jobTitle"
-                      className={`form-control ${
-                        formik.touched.jobTitle && formik.errors.jobTitle
+                      className={`form-control ${formik.touched.jobTitle && formik.errors.jobTitle
                           ? "is-invalid"
                           : ""
-                      }`}
+                        }`}
                     />
                     <ErrorMessage
                       component="div"
@@ -57,11 +56,10 @@ function TaskForm(props) {
                       type="text"
                       id="companyName"
                       name="companyName"
-                      className={`form-control ${
-                        formik.touched.companyName && formik.errors.companyName
+                      className={`form-control ${formik.touched.companyName && formik.errors.companyName
                           ? "is-invalid"
                           : ""
-                      }`}
+                        }`}
                       as="textarea"
                     />
                     <ErrorMessage
@@ -81,11 +79,10 @@ function TaskForm(props) {
                       onChange={(date) =>
                         formik.setFieldValue("date", date)
                       }
-                      className={`form-control ${
-                        formik.touched.date && formik.errors.date
+                      className={`form-control ${formik.touched.date && formik.errors.date
                           ? "is-invalid"
                           : ""
-                      }`}
+                        }`}
                     />
                     <ErrorMessage
                       component="div"
@@ -99,11 +96,10 @@ function TaskForm(props) {
                       type="text"
                       id="jobLink"
                       name="jobLink"
-                      className={`form-control ${
-                        formik.touched.jobLink && formik.errors.jobLink
+                      className={`form-control ${formik.touched.jobLink && formik.errors.jobLink
                           ? "is-invalid"
                           : ""
-                      }`}
+                        }`}
                       as="textarea"
                     />
                     <ErrorMessage
@@ -118,11 +114,10 @@ function TaskForm(props) {
                       type="text"
                       id="location"
                       name="location"
-                      className={`form-control ${
-                        formik.touched.location && formik.errors.location
+                      className={`form-control ${formik.touched.location && formik.errors.location
                           ? "is-invalid"
                           : ""
-                      }`}
+                        }`}
                       as="textarea"
                     />
                     <ErrorMessage
