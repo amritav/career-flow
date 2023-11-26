@@ -7,7 +7,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/kingan1/application-tracking-system)
 
 [![Build and Deploy Frontend](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
-[![Super Linter](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml)
+[![Super Linter](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml/badge.svg)](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml)
 
 #      J-Tracker 2.0 - Your Job Tracking Assistant
 
