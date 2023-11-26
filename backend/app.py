@@ -199,7 +199,7 @@ def create_app():
                 "jobLink": request.json.get('jobLink', None),
                 "location": request.json.get('location', None),
                 "stage": request.json.get("status", "1"),
-                "notes": None,
+                "notes": (''),
             }
             applications = user["applications"] + [current_application]
             user["applications"] = applications

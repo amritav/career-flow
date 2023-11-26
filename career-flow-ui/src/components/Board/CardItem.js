@@ -157,18 +157,18 @@ function CardItem(props) {
   };
 
   const handleSaveNotes = () => {
-    
+
     axios.put(`/applications/${props.task.id}`, { notes: notes }, {
       headers: {
         Authorization: "Bearer " + props.state.token,
       }
     })
-    .then(response => {
-      // Handle success
-    })
-    .catch(error => {
-      // Handle error
-    });
+      .then(response => {
+        // Handle success
+      })
+      .catch(error => {
+        // Handle error
+      });
 
     handleCloseNotesModal();
   };
@@ -237,31 +237,35 @@ function CardItem(props) {
         </DialogActions>
       </Dialog>
 
-      <Dialog open={showNotesModal} onClose={handleCloseNotesModal} >
+      <Dialog open={showNotesModal} onClose={handleCloseNotesModal} fullWidth maxWidth="xs">
         <DialogTitle align='center' fontWeight='bold'>Notes</DialogTitle>
         <Divider />
         <DialogContent>
           {notes.map((note, index) => (
             <Box key={index} marginBottom={2}>
               {note ? (
-                <Box bgcolor="#fffde7" padding={1} borderRadius={4}>
+                <Box padding={1} borderRadius={4}>
                   <Typography>{note}</Typography>
                 </Box>
               ) : (
-                <Box
-                  border="2px dashed #bdbdbd"
-                  borderRadius={4}
-                  minHeight={50}
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  onClick={(e) => handleNoteChange(e, index)}
+                // <Box
+                //   border="2px dashed #bdbdbd"
+                //   borderRadius={4}
+                //   minHeight={50}
+                //   display="flex"
+                //   alignItems="center"
+                //   justifyContent="center"
+                //   onClick={(e) => handleNoteChange(e, index)}
+                // >
+                <TextField fullWidth multiline={true} rows={3} placeholder="Add Note" 
+                // variant="standard"
+                // InputProps={{
+                //   disableUnderline: true,
+                // }}
                 >
-                  <TextField placeholder="                 +" variant="standard"
-                    InputProps={{
-                      disableUnderline: true,
-                    }}></TextField>
-                </Box>
+
+                </TextField>
+                // </Box>
               )}
             </Box>
           ))}
