@@ -3,11 +3,12 @@ import { Button } from "react-bootstrap";
 import TaskForm from "./TaskForm";
 import axios from "axios";
 import { data } from "jquery";
+import moment from 'moment';
 
 const initialValues = {
   jobTitle: "",
   companyName: "",
-  date: new Date(),
+  date: moment.utc(new Date(), 'YYYY-MM-DD').local().toDate(),
   jobLink: "",
   location: ""
 };

@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import DescriptionIcon from '@mui/icons-material/Description';
+import moment from 'moment';
 
 
 const useStyles = makeStyles({
@@ -49,7 +50,7 @@ const initialEditedValues = {
   id: "",
   jobTitle: "",
   companyName: "",
-  date: new Date(),
+  date: moment.utc(new Date(), 'YYYY-MM-DD').local().toDate(),
   jobLink: "",
   location: ""
 };

@@ -9,7 +9,7 @@
 [![Build and Deploy Frontend](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
 [![Super Linter](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml)
 
-#      J-Tracker 2.0 - Your Job Tracking Assistant
+#      Career Flow - Your Job Tracking Assistant
 
 
 The process of applying for jobs and internships is not a cakewalk. Managing job applications is a time-consuming process. Due to the referrals and deadlines, the entire procedure can be stressful. Our application allows you to track and manage your job application process, as well as regulate it, without the use of cumbersome Excel spreadsheets.
@@ -337,12 +337,9 @@ If you encounter issues while using J-Tracker 2.0, here are some common problems
 4. If you're still facing issues, refer to the project's documentation for the email notification feature or seek help from the project's community.
 
 
-## License
-The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
 
 
-## How to Contribute?
-Please see our CONTRIBUTING.md for instructions on how to contribute to the repository and assist us in improving the project.
+
 
 ## Have Questions or Need Assistance?
 
@@ -350,13 +347,25 @@ If you have any questions, need help, or want to provide feedback about the J-Tr
 
 Your inquiries and suggestions are always welcome!
 
-## Team Members
-- Amogh Mahesh
-- Aditya Chitlangia
-- Abhishek Arun Sheth
-- Sachin Rudrappa Doddaguni
+## Contributors
+<center>
+  <table>
+    <tr>
+        <td align="center"><a href="https://github.com/sharonjoji99"><img src="https://avatars.githubusercontent.com/u/40449660?v=4" width="100px;" alt=""/><br /><sub><b>Nimal Sharon Joji</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/adi-kiran"><img src="https://avatars.githubusercontent.com/u/36990588?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kiran</b></sub></a></td>
+    <td align="center"><a href="https://github.com/amritav"><img src="https://avatars.githubusercontent.com/u/19224584?v=4" width="100px;" alt=""/><br /><sub><b>Amrita Visalam</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Diksha-Maurya"><img src="https://avatars.githubusercontent.com/u/27075012?v=4" width="100px;" alt=""/><br /><sub><b>Diksha Maurya</b></sub></a><br /></td>
+    </tr>
+  </table>
+</center>
+
+ ## Contribution
+  Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/career-flow/blob/main/Contributing.md) file for instructions on how to contribute to our repository.
 
 ## Recommended Citation
 J-Tracker 2.0 Amogh Mahesh, Aditya Chitlangia, Abhishek Arun Sheth, Sachin Rudrappa Doddaguni. 2023.
 [https://github.com/sachindoddaguni/application-tracking-system]
+
+## License
+The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
 

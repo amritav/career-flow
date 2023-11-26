@@ -1,0 +1,2268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>backend.app API documentation</title>
+<meta name="description" content="The flask application for the career-flow application" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>backend.app</code></h1>
+</header>
+<section id="section-intro">
+<p>The flask application for the career-flow application</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+The flask application for the career-flow application
+&#34;&#34;&#34;
+# importing required python libraries
+from flask import Flask, jsonify, request, send_file
+from flask_mongoengine import MongoEngine
+from flask_cors import CORS, cross_origin
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup
+from webdriver_manager.chrome import ChromeDriverManager
+import pandas as pd
+from datetime import datetime, timedelta
+import yaml
+import hashlib
+import uuid
+import os
+from io import BytesIO
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+import json
+from flask_pymongo import PyMongo, ObjectId
+from io import BytesIO
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime, timedelta
+from collections import defaultdict
+import sys
+
+import json
+import bcrypt
+from flask_pymongo import PyMongo
+from flask import Flask, request, jsonify
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
+import mongomock
+from datetime import datetime, timedelta, timezone
+from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity, \
+                               unset_jwt_cookies, jwt_required, JWTManager
+from datetime import datetime, timedelta
+from functools import reduce
+from bson import json_util 
+from pymongo import MongoClient
+from flasgger import Swagger
+from flask_mail import Mail, Message
+import smtplib
+from smtplib import SMTPAuthenticationError
+
+from io import BytesIO
+
+
+existing_endpoints = [&#34;/applications&#34;, &#34;/resume&#34;, &#34;/dashboard&#34;, &#34;/contacts&#34;, &#34;/token&#34;, &#34;/register&#34;]
+
+
+
+
+def create_app():
+    &#34;&#34;&#34;
+    Creates a server hosted on localhost
+
+    :return: Flask object
+    &#34;&#34;&#34;
+    app = Flask(__name__)
+    app.secret_key = &#39;secret&#39;
+    app.config[&#34;JWT_SECRET_KEY&#34;] = &#34;softwareEngineering&#34;
+    app.config[&#34;JWT_ACCESS_TOKEN_EXPIRES&#34;] = timedelta(hours=1)
+    # make flask support CORS
+    CORS(app)
+    app.config[&#39;MAIL_SERVER&#39;] = &#39;smtp.mail.yahoo.com&#39;
+    app.config[&#39;MAIL_PORT&#39;] = 587
+    app.config[&#39;MAIL_USERNAME&#39;] = &#39;contactus_burnout@yahoo.com&#39;  # Your Gmail email address
+    app.config[&#39;MAIL_PASSWORD&#39;] = &#39;fpfkvuxxubnmzahw&#39;  # Your Gmail password or app-specific password
+    app.config[&#39;MAIL_USE_TLS&#39;] = True
+    app.config[&#39;MAIL_USE_SSL&#39;] = False
+        
+    return app
+
+app = create_app()
+# with open(&#34;application.yml&#34;) as f:
+#     info = yaml.load(f, Loader=yaml.FullLoader)
+#     username = info[&#34;username&#34;]
+#     password = info[&#34;password&#34;]
+#     app.config[&#34;MONGODB_SETTINGS&#34;] = {
+#         &#34;db&#34;: &#34;appTracker&#34;,
+#         # &#34;host&#34;: os.getenv(&#34;db_username&#34;),
+#         &#34;host&#34;: &#34;localhost&#34;,
+#     }
+
+app.config[&#34;MONGODB_SETTINGS&#34;] = {
+        &#34;db&#34;: &#34;appTracker&#34;,
+        # &#34;host&#34;: os.getenv(&#34;db_username&#34;),
+        &#34;host&#34;: &#34;localhost&#34;,
+    }
+db = MongoEngine()
+db.init_app(app)
+mail = Mail(app)
+jwt = JWTManager(app)
+
+@app.route(&#34;/&#34;)
+@cross_origin()
+def health_check():
+    &#34;&#34;&#34;
+    Return 200. Just a health check method to check if flask application is running.
+    Corresponds to API route /
+    &#34;&#34;&#34;
+    return jsonify({&#34;message&#34;: &#34;Server up and running&#34;}), 200
+     
+
+@app.route(&#39;/token&#39;, methods=[&#34;POST&#34;])
+def create_token():
+    &#34;&#34;&#34;
+    Login function that creates a jwt_token for the user and returns it
+    Corresponds to API route /token
+    &#34;&#34;&#34;
+    print(&#39;This is standard output&#39;)
+    try:
+        email = request.json.get(&#34;email&#34;, None)
+        password = request.json.get(&#34;password&#34;, None)
+        print(password)
+        user = Users.objects(
+            email=email, password=password
+        ).first()
+        if user is not None:
+            access_token = create_access_token(identity=email)
+            return jsonify({&#34;message&#34;: &#34;Login successful&#34;, &#34;access_token&#34;:access_token})
+        else:
+            print(&#34;Invalid email or password&#34;)
+            return jsonify({&#34;message&#34;: &#34;Invalid email or password&#34;}),401
+    except Exception as err:
+        print( err)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+    
+@app.route(&#34;/register&#34;, methods=[&#34;POST&#34;])
+def register():
+    &#34;&#34;&#34;
+    Signup function that creates a new user object and adds it to the database.
+    Corresponds to API route /register
+    &#34;&#34;&#34;
+    email = request.json.get(&#39;email&#39;, None)
+    password = request.json.get(&#39;password&#39;, None)
+    first_name = request.json.get(&#39;firstName&#39;, None)
+    last_name = request.json.get(&#39;lastName&#39;, None)
+    print(email)
+    new_document = {
+    &#34;email&#34;: email,
+    &#34;password&#34;: password,
+    &#34;first_name&#34;: first_name,
+    &#34;last_name&#34;: last_name,
+    }
+    query = {
+        &#34;email&#34;: email,
+    }
+    try:
+        user = Users(
+            firstName=first_name,
+            lastName=last_name,
+            email=email,
+            password=password,
+            applications=[]
+        )
+        user.save()
+        return jsonify(user.to_json()), 200
+    except Exception as e:
+        response = jsonify({&#34;msg&#34;: &#34;register failed&#34;})
+    return response
+    
+@app.route(&#34;/logout&#34;, methods=[&#34;POST&#34;])
+def logout():
+    &#34;&#34;&#34;
+    Logout the user and clear their session.
+    Corresponds to API route /logout
+    tags:
+    - User Logout
+    responses:
+    200:
+        description: Logout successful
+    &#34;&#34;&#34;
+    response = jsonify({&#34;msg&#34;: &#34;logout successful&#34;})
+    unset_jwt_cookies(response)
+    return response
+
+# get data from the CSV file for rendering root page
+@app.route(&#34;/applications&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_data():
+    &#34;&#34;&#34;
+    Gets user&#39;s applications from the database.
+    Corresponds to API route GET /application
+    
+    :return: JSON object with application data as a list of application objects
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        users = Users.objects()
+        user = users.filter(email=user_email).first()
+        applications = user[&#34;applications&#34;]
+        return jsonify(applications)
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+
+@app.route(&#34;/applications&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def add_application():
+    &#34;&#34;&#34;
+    Adds a new job application for the user with the details from the request body.
+    Corresponds to API route POST /applications
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    
+    try:
+        current_user_email = get_jwt_identity()
+        print(&#34;User: ------ &#34;, current_user_email)
+        users = Users.objects()
+        user = users.filter(email=current_user_email).first()
+        print(&#34;User: ------ &#34;, user.email)
+        print(request.json.get(&#39;date&#39;, None))
+        current_application = {
+            &#34;id&#34;: get_new_application_id(user),
+            &#34;jobTitle&#34;: request.json.get(&#39;jobTitle&#39;, None),
+            &#34;companyName&#34;: request.json.get(&#39;companyName&#39;, None),
+            &#34;date&#34;: request.json.get(&#39;date&#39;, None)[:10],
+            &#34;jobLink&#34;: request.json.get(&#39;jobLink&#39;, None),
+            &#34;location&#34;: request.json.get(&#39;location&#39;, None),
+            &#34;stage&#34;: request.json.get(&#34;status&#34;, &#34;1&#34;),
+        }
+        applications = user[&#34;applications&#34;] + [current_application]
+        user[&#34;applications&#34;] = applications
+        user.save()
+        return jsonify(current_application), 200
+    except Exception as ex:
+        return jsonify({&#34;error&#34;: ex}), 500
+
+@app.route(&#34;/applications/&lt;int:application_id&gt;&#34;, methods=[&#34;PUT&#34;])
+@jwt_required()
+def update_application(application_id):
+    &#34;&#34;&#34;
+    Updates the given job application for the user with the details from the request body
+    Corresponds to API route PUT /applications/&lt;application_id&gt;
+    
+    :param application_id: Application id to be modified
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        request_data = request.json.get(&#34;application&#34;, {})
+        print(&#34;HERE:&#34;)
+        print(request_data)
+        user = Users.objects(email=user_email).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        application_to_update = None
+        for app in user.applications:
+            if app[&#34;id&#34;] == application_id:
+                for key in request_data:
+                    app[key] = request_data[key]
+                application_to_update = app
+                break
+        if application_to_update is None:
+            return jsonify({&#34;error&#34;: &#34;Application not found&#34;}), 404
+        user.save()
+        return jsonify(application_to_update), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: str(e)}), 500
+    
+@app.route(&#34;/applications/&lt;int:application_id&gt;&#34;, methods=[&#34;DELETE&#34;])
+@jwt_required()
+def delete_application(application_id):
+    &#34;&#34;&#34;
+    Deletes the given job application for the user.
+    Corresponds to API route DELETE /applications/&lt;application_id&gt;
+    
+    :param application_id: Application id to be deleted
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        user = Users.objects(email=user_email).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        
+        # Filter out the application with the given ID
+        user.applications = [app for app in user.applications if app[&#39;id&#39;] != application_id]
+        user.save()
+        # You can add an email notification here if needed
+        return jsonify({&#34;message&#34;: &#34;Application deleted&#34;}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+
+@app.route(&#34;/resume&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def upload_resume():
+    &#34;&#34;&#34;
+    Uploads resume file or updates an existing resume for the user
+    Corresponds to API route POST /resume
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        try:
+            file = request.files[&#34;file&#34;]
+        except:
+            return jsonify({&#34;error&#34;: &#34;No resume file found in the input&#34;}), 400
+
+        if not hasattr(user, &#39;resume&#39;):
+            # There is no file
+            user.resume.put(file.stream, content_type=file.content_type, filename=file.filename)
+            user.save()
+            return jsonify({&#34;message&#34;: &#34;resume successfully uploaded&#34;}), 200
+        else:
+            # There is a file, we are replacing it
+            user.resume.replace(file.stream, content_type=file.content_type, filename=file.filename)
+            user.save()
+            return jsonify({&#34;message&#34;: &#34;resume successfully replaced&#34;}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+    
+@app.route(&#39;/sendEmail&#39;, methods=[&#39;POST&#39;])
+@jwt_required()
+def send_email():
+    &#34;&#34;&#34;
+    Send an email with the shared application details.
+    Corresponds to API route POST /sendEmail
+    &#34;&#34;&#34;
+    data = request.get_json()
+    email = data.get(&#39;email&#39;)
+    taskDetails = data.get(&#39;taskDetails&#39;)
+    
+    try:
+        msg = Message(&#34;Shared Task Details&#34;, sender=&#34;contactus_burnout@yahoo.com&#34;, recipients=[email])
+        msg.body = f&#34;Task Details:\n{taskDetails}&#34;
+        mail.send(msg)
+        return jsonify({&#34;message&#34;: &#34;Email sent successfully&#34;}), 200
+    except SMTPAuthenticationError as e:
+        return jsonify({&#34;error&#34;: &#34;Authentication error. Check your credentials&#34;}), 500
+    except Exception as e:
+        return jsonify({&#34;error&#34;: str(e)}), 500 
+
+@app.route(&#34;/downloadresume&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_resume():
+    &#34;&#34;&#34;
+    Retrieves the resume file for the user
+    Corresponds to API route GET /downloadresume
+    
+    :return: response with file
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        try:
+            if len(user.resume.read()) == 0:
+                raise FileNotFoundError
+            else:
+                user.resume.seek(0)
+        except:
+            return jsonify({&#34;error&#34;: &#34;resume could not be found&#34;}), 400
+    
+        file_like_object = BytesIO(user.resume.read())
+        if hasattr(user, &#39;resume&#39;):
+            response = send_file(
+            file_like_object,
+            mimetype=&#34;application/pdf&#34;,
+            download_name = user.resume.filename,
+            as_attachment=True,
+            )
+            response.headers[&#34;x-filename&#34;] = &#34;resume.pdf&#34;
+            response.headers[&#34;Access-Control-Expose-Headers&#34;] = &#34;x-filename&#34;
+            return response, 200
+        
+    except Exception as ex:
+            print(ex)
+            return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+
+@app.route(&#34;/fetchresume&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def fetch_resume():
+    &#34;&#34;&#34;
+    Retrieves the resume file for the user and sends it back in a way that
+    can be displayed in an iframe on the client-side.
+    Corresponds to API route GET /fetchresume
+    
+    :return: response with file
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        if not hasattr(user, &#39;resume&#39;) or user.resume.length == 0:
+            return jsonify({&#34;error&#34;: &#34;No resume uploaded&#34;}), 404
+        user.resume.seek(0)  # Reset the file pointer to the beginning
+        file_like_object = BytesIO(user.resume.read())
+        return send_file(
+            file_like_object,
+            mimetype=&#34;application/pdf&#34;,
+            as_attachment=False  # Set to False for inline display
+        )
+    except Exception as ex:
+        print(ex)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500
+
+@app.route(&#34;/dashboard&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_dashboard_data():
+    &#34;&#34;&#34;
+    Gets user&#39;s stats data from the database
+    Corresponds to API route GET /dashboard
+    
+    :return: JSON object with stats data
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        users = Users.objects()         
+        user = users.filter(email=user_email).first()
+        applications = user[&#34;applications&#34;]
+        print(&#34;Task 1/3: Getting Job Application Status Counts&#34;)
+        job_app_status, applications_created, interviews_completed = get_job_app_status(applications)
+        print(&#34;Task 2/3: Getting Job Applications Created in the last 6 months&#34;)
+        six_months_job_count = get_last_six_months_job_counts(applications)
+        print(&#34;Task 3/3: Getting latest 4 applications&#34;)
+        last_four_apps = get_last_four_jobs(applications)
+        contacts_saved = len(user[&#34;contacts&#34;])
+        notes_taken = len([1 for app in applications if &#34;notes&#34; in app and len(app[&#34;notes&#34;]&gt;0)])
+        return jsonify({
+            &#34;six_months_jobs_count&#34;: six_months_job_count,
+            &#34;job_applications_status&#34;: job_app_status,
+            &#34;applications_created&#34;: applications_created,
+            &#34;interviews_completed&#34;: interviews_completed,
+            &#34;contacts_saved&#34;: contacts_saved,
+            &#34;notes_taken&#34;: notes_taken,
+            &#34;last_four_apps&#34;: last_four_apps
+        }),200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;, &#34;error msg&#34;:e}), 500
+    
+@app.route(&#34;/users/contacts&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_contacts():
+    &#34;&#34;&#34;
+    Retrieves contacts for the logged-in user.
+    Corresponds to API route GET /users/contacts
+    
+    :return: JSON object with user&#39;s contacts
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        contacts = user.contacts
+        return jsonify({&#34;contacts&#34;: contacts}), 200
+    except Exception as e:
+        return jsonify({&#34;error&#34;: &#34;Unable to fetch contacts&#34;}), 500
+
+@app.route(&#34;/users/contacts&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def add_contact():
+    &#34;&#34;&#34;
+    Adds a new contact for the user.
+    Corresponds to API route POST /users/contacts
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        current_user_id = get_jwt_identity()
+        user = Users.objects(email=current_user_id).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        data = json.loads(request.data)
+        new_contact = {
+            &#34;firstName&#34;: data[&#34;firstName&#34;],
+            &#34;lastName&#34;: data[&#34;lastName&#34;],
+            &#34;jobTitle&#34;: data.get(&#34;jobTitle&#34;, &#34;&#34;),
+            &#34;companyName&#34;: data.get(&#34;companyName&#34;, &#34;&#34;),
+            &#34;email&#34;: data.get(&#34;email&#34;, &#34;&#34;),
+            &#34;phone&#34;: data.get(&#34;phone&#34;, &#34;&#34;),
+            &#34;linkedin&#34;: data.get(&#34;linkedin&#34;, &#34;&#34;)
+        }
+        user.contacts.append(new_contact)
+        user.save()
+        return jsonify({&#34;message&#34;: &#34;Contact added successfully&#34;, &#34;contact&#34;: new_contact}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Unable to add contact&#34;}), 500
+
+
+class Users(db.Document):
+    &#34;&#34;&#34;
+    Users class. Holds full name, username, password, email, list of applications, list of contacts and a resume
+    &#34;&#34;&#34;
+
+    firstName = db.StringField()
+    lastName = db.StringField()
+    email    = db.StringField()
+    password = db.StringField()
+    applications = db.ListField()
+    contacts = db.ListField()
+    resume = db.FileField()
+
+class ResumeDocument(db.Document):
+    &#34;&#34;&#34;
+    Resume document class. Stores the resume as a binary file object.
+    &#34;&#34;&#34;
+    content = db.BinaryField()
+    filename = db.StringField()
+
+    def to_json(self):
+        &#34;&#34;&#34;
+        Returns the user details in JSON object
+
+        :return: JSON object
+        &#34;&#34;&#34;
+        return { &#34;fullName&#34;: self.firstName, &#34;lastName&#34;: self.lastName,  &#34;email&#34;: self.email}
+
+
+def get_new_user_id():
+    &#34;&#34;&#34;
+    Returns the next value to be used for new user
+
+    :return: key with new user_id
+    &#34;&#34;&#34;
+    user_objects = Users.objects()
+    if len(user_objects) == 0:
+        return 1
+
+    new_id = 0
+    for a in user_objects:
+        new_id = max(new_id, a[&#34;id&#34;])
+
+    return new_id + 1
+
+
+def get_new_application_id(user):
+    &#34;&#34;&#34;
+    Returns the next value to be used for new application
+
+    :param: user_id: User id of the active user
+
+    :return: key with new application_id
+    &#34;&#34;&#34;
+
+    if len(user[&#34;applications&#34;]) == 0:
+        return 1
+
+    new_id = 0
+    for a in user[&#34;applications&#34;]:
+        new_id = max(new_id, a[&#34;id&#34;])
+
+    return new_id + 1
+
+def send_email(to_email, subject, message):
+    # Set up your email and password here, or use environment variables
+    gmail_user = &#34;amoghmahesh14@gmail.com&#34;
+    gmail_password = os.getenv(&#34;email_password&#34;)
+
+    msg = MIMEMultipart()
+    msg[&#39;From&#39;] = gmail_user
+    msg[&#39;To&#39;] = to_email
+    msg[&#39;Subject&#39;] = subject
+
+    # Attach the message
+    msg.attach(MIMEText(message, &#39;plain&#39;))
+
+    try:
+        server = smtplib.SMTP(&#39;smtp.gmail.com&#39;, 587)
+        server.starttls()
+        server.login(gmail_user, gmail_password)
+        text = msg.as_string()
+        server.sendmail(gmail_user, to_email, text)
+        server.quit()
+        print(&#34;Email sent successfully!&#34;)
+    except Exception as e:
+        print(&#34;Email could not be sent. Error: {}&#34;.format(str(e)))
+
+def email_reminders():
+    users = Users.objects({})
+    for user in users:
+        current_applications =  user[&#34;applications&#34;]
+        for application in current_applications:
+            if application[&#34;status&#34;] != 3 or application[&#34;status&#34;] != 4:
+                try:
+                    # Send an email reminder
+                    to_email = user.email  # Use the user&#39;s email address
+                    subject = &#34;Job Application Reminder&#34;
+                    message = f&#34;Hello {user.fullName},\n\nThe following job application has not been submitted yet.\nJob Title: {application[&#39;jobTitle&#39;]}\nCompany: {application[&#39;companyName&#39;]}\nApply By: {application[&#39;date&#39;]}\n\nBest regards,\nYour Application Tracker&#34;
+                    send_email(to_email, subject, message)
+                except:
+                    return jsonify({&#34;error&#34;: &#34;EMAIL wasn&#39;t sent&#34;}), 400
+                
+sched = BackgroundScheduler(daemon=True)
+sched.add_job(email_reminders,&#39;interval&#39;,minutes=60)
+sched.start()
+def generate_pdf(data):
+    doc = Document()
+
+    # Set page margins to fit within one page
+    sections = doc.sections
+    for section in sections:
+        section.left_margin = Pt(36)  # 0.5 inch
+        section.right_margin = Pt(36)  # 0.5 inch
+        section.top_margin = Pt(36)  # 0.5 inch
+        section.bottom_margin = Pt(36)  # 0.5 inch
+
+    # Helper function to add heading with format
+    def add_heading_with_format(doc, text, font_size=16, is_bold=True):
+        p = doc.add_paragraph()
+        run = p.add_run(text)
+        if is_bold:
+            run.bold = True
+        p.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        run.font.size = Pt(font_size)
+
+    # Function to add details section
+    def add_details_section(doc, section_title, details, is_bold_title=True):
+        if section_title:
+            add_heading_with_format(doc, section_title, font_size=14, is_bold=True)
+        for detail in details:
+            for key, value in detail.items():
+                if key == &#34;company&#34;:
+                    p = doc.add_paragraph()
+                    run = p.add_run(value)
+                    run.bold = True
+                    p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                elif key == &#34;project_title&#34;:
+                    # Add the value of &#34;project_title&#34; with bold formatting
+                    p = doc.add_paragraph()
+                    run = p.add_run(value)
+                    run.bold = True
+                    p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                elif key == &#34;descriptionc&#34;:
+                    # Add the value of &#34;descriptionc&#34; without &#34;descriptionc&#34; prefix
+                    doc.add_paragraph(value, style=&#34;List Bullet&#34;)
+                elif key != &#34;descriptionc&#34; and key != &#34;level&#34; and key != &#34;extracurricularActivities&#34;:
+                    if key == &#34;university&#34;:
+                        # Add the value of &#34;university&#34; with bold formatting and without a bullet
+                        p = doc.add_paragraph()
+                        run = p.add_run(&#34;University: &#34; + value)
+                        run.bold = True
+                        p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                    else:
+                        doc.add_paragraph(f&#34;{value}&#34;, style=&#34;List Bullet&#34;)
+
+    # Title
+    add_heading_with_format(doc, &#34;Resume&#34;, font_size=18, is_bold=True)
+
+    # Contact Information
+    add_heading_with_format(doc, &#34;Contact Information&#34;, font_size=16, is_bold=True)
+    doc.add_paragraph(&#34;Name: &#34; + data[&#34;name&#34;])
+    doc.add_paragraph(&#34;Address: &#34; + data[&#34;address&#34;])
+    doc.add_paragraph(&#34;Email: &#34; + data[&#34;email&#34;])
+    doc.add_paragraph(&#34;LinkedIn: &#34; + data[&#34;linkedin&#34;])
+    doc.add_paragraph(&#34;Phone: &#34; + data[&#34;phone&#34;])
+
+    # Education section
+    add_details_section(doc, &#34;Education&#34;, data[&#34;education&#34;])
+
+    # Skills section
+    skills = data[&#34;skills&#34;]
+    skills_text = &#34;, &#34;.join(skill[&#34;skills&#34;] for skill in skills)
+    add_heading_with_format(doc, &#34;Skills&#34;, font_size=14, is_bold=True)
+    doc.add_paragraph(skills_text, style=&#34;List Bullet&#34;)
+
+    # Work Experience section
+    add_heading_with_format(doc, &#34;Work Experience&#34;, font_size=16, is_bold=True)
+    for entry in data[&#34;workExperience&#34;]:
+        add_details_section(doc, &#34;&#34;, [entry], is_bold_title=False)  # Removed the &#34;Work Entry&#34; heading
+
+    # Projects section
+    add_heading_with_format(doc, &#34;Projects&#34;, font_size=16, is_bold=True)
+    for project in data[&#34;projects&#34;]:
+        add_details_section(doc, &#34;&#34;, [project], is_bold_title=False)  # Removed repeated &#34;Project&#34; heading
+
+    # Save the document to a .docx file
+
+    word_buffer = BytesIO()
+    output_file_path = &#34;generated_resume.docx&#34;
+    doc.save(word_buffer)
+    word_buffer.seek(0)
+
+    return word_buffer
+
+
+@app.route(&#39;/resumebuilder&#39;, methods=[&#39;POST&#39;])
+def form_builder():
+    try:
+        # Assuming the request data is in JSON format
+        data = request.json
+
+        # Log the data (you can customize this part)
+        print(&#34;Received Form Data:&#34;)
+        for key, value in data.items():
+            print(f&#34;{key}: {value}&#34;)
+
+        # Generate PDF
+        pdf_data = generate_pdf(data)
+
+        # Send the PDF file as a response
+        return send_file(pdf_data, mimetype=&#39;application/msword&#39;, as_attachment=True,
+                         attachment_filename=&#39;generated_resume.docx&#39;)
+    except Exception as e:
+        print(f&#34;Error processing form data: {str(e)}&#34;)
+        return &#34;Error processing form data&#34;, 500
+
+
+def get_job_app_status(applications):
+    &#34;&#34;&#34;
+    Returns the number of job applications in each job status
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with name and count as the fields for the different statuses the applications are in and the number of applications in those statuses.
+    &#34;&#34;&#34;
+    job_app_status = {
+        &#34;Wishlist&#34;: 0,
+        &#34;Applied&#34;: 0,
+        &#34;Interviewed&#34;: 0,
+        &#34;Rejected&#34;: 0,
+    }
+    for application in applications:
+        # if application[&#34;stage&#34;]==&#34;Wishlist&#34;:
+        if int(application[&#34;stage&#34;]) == 1:
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Applied&#34;:
+        elif int(application[&#34;stage&#34;]) == 2:
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Interviewed&#34;:
+        elif int(application[&#34;stage&#34;]) == 3:
+            job_app_status[&#34;Interviewed&#34;] += 1
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Rejected&#34;:
+        elif int(application[&#34;stage&#34;]) == 4:
+            job_app_status[&#34;Rejected&#34;] += 1
+            job_app_status[&#34;Interviewed&#34;] += 1
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+    res = [
+        {&#34;name&#34;: &#34;Jobs Saved&#34;, &#34;count&#34;: job_app_status[&#34;Wishlist&#34;]},
+        {&#34;name&#34;: &#34;Applied&#34;, &#34;count&#34;: job_app_status[&#34;Applied&#34;]},
+        {&#34;name&#34;: &#34;Interviewed&#34;, &#34;count&#34;: job_app_status[&#34;Interviewed&#34;]},
+        {&#34;name&#34;: &#34;Rejected&#34;, &#34;count&#34;: job_app_status[&#34;Rejected&#34;]},
+    ]
+    return res,job_app_status[&#34;Applied&#34;],job_app_status[&#34;Interviewed&#34;]
+
+def get_last_six_months_job_counts(applications):
+    &#34;&#34;&#34;
+    Returns the number of jobs created in each month for the last 6 months
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with Month, Jobs Created as the fields for the last six months
+    &#34;&#34;&#34;
+    month_map = {
+        index + 1: val
+        for index, val in enumerate(
+            [
+                &#34;Jan&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Apr&#34;,
+                &#34;May&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Aug&#34;,
+                &#34;Sep&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Dec&#34;,
+            ]
+        )
+    }
+    # Create a defaultdict to store date strings for each month
+    result_dict = defaultdict(list)
+    # Get the current date
+    current_date = (datetime.now().replace(day=1) + timedelta(days=32)).replace(day=1)
+    # Iterate over the last six months
+    for i in range(6):
+        # Calculate the start and end date of the current month
+        end_of_month = current_date.replace(day=1) - timedelta(days=1)
+        start_of_month = end_of_month.replace(day=1)
+        # Filter date objects that belong to the current month
+        current_month_dates = [
+            datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;).strftime(&#34;%Y-%m-%d&#34;)
+            for application in applications
+            if start_of_month
+            &lt;= datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;)
+            &lt;= end_of_month
+        ]
+        # Store the result in the dictionary
+        result_dict[
+            &#34;%s %s&#34; % (month_map[start_of_month.month], start_of_month.year)
+        ] = len(current_month_dates)
+        # Move to the previous month
+        current_date = start_of_month
+    res = [
+        {&#34;Month&#34;: key, &#34;Jobs Created&#34;: result_dict[key]}
+        for key in list(result_dict.keys())[::-1]
+    ]
+    return res
+
+def get_last_four_jobs(applications):
+    &#34;&#34;&#34;
+    Returns the latest 4 job application details based on the date field in the job application.
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with jobTitle, company and status for the latest 4 job applications based on the date field of the ob application
+    &#34;&#34;&#34;
+    appStatus = {&#39;1&#39;: &#34;Wishlist&#34;, &#39;2&#39;: &#34;Applied&#34;, &#39;3&#39;: &#34;Interviewed&#34;, &#39;4&#39;:&#34;Rejected&#34;}
+    apps = sorted(applications, key=lambda application: datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;), reverse=True)[:4]
+    res = [
+        {
+            &#34;jobTitle&#34;: application[&#34;jobTitle&#34;],
+            &#34;company&#34;: application[&#34;companyName&#34;],
+            &#34;status&#34;: appStatus[application[&#34;stage&#34;]],
+        }
+        for application in apps
+    ]
+    return res
+
+if __name__ == &#39;__main__&#39;:
+    app.run(debug=False)
+
+# if __name__ == &#34;__main__&#34;:
+#     app.run()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="backend.app.add_application"><code class="name flex">
+<span>def <span class="ident">add_application</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a new job application for the user with the details from the request body.
+Corresponds to API route POST /applications</p>
+<p>:return: JSON object with status and message</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/applications&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def add_application():
+    &#34;&#34;&#34;
+    Adds a new job application for the user with the details from the request body.
+    Corresponds to API route POST /applications
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    
+    try:
+        current_user_email = get_jwt_identity()
+        print(&#34;User: ------ &#34;, current_user_email)
+        users = Users.objects()
+        user = users.filter(email=current_user_email).first()
+        print(&#34;User: ------ &#34;, user.email)
+        print(request.json.get(&#39;date&#39;, None))
+        current_application = {
+            &#34;id&#34;: get_new_application_id(user),
+            &#34;jobTitle&#34;: request.json.get(&#39;jobTitle&#39;, None),
+            &#34;companyName&#34;: request.json.get(&#39;companyName&#39;, None),
+            &#34;date&#34;: request.json.get(&#39;date&#39;, None)[:10],
+            &#34;jobLink&#34;: request.json.get(&#39;jobLink&#39;, None),
+            &#34;location&#34;: request.json.get(&#39;location&#39;, None),
+            &#34;stage&#34;: request.json.get(&#34;status&#34;, &#34;1&#34;),
+        }
+        applications = user[&#34;applications&#34;] + [current_application]
+        user[&#34;applications&#34;] = applications
+        user.save()
+        return jsonify(current_application), 200
+    except Exception as ex:
+        return jsonify({&#34;error&#34;: ex}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.add_contact"><code class="name flex">
+<span>def <span class="ident">add_contact</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a new contact for the user.
+Corresponds to API route POST /users/contacts</p>
+<p>:return: JSON object with status and message</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/users/contacts&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def add_contact():
+    &#34;&#34;&#34;
+    Adds a new contact for the user.
+    Corresponds to API route POST /users/contacts
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        current_user_id = get_jwt_identity()
+        user = Users.objects(email=current_user_id).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        data = json.loads(request.data)
+        new_contact = {
+            &#34;firstName&#34;: data[&#34;firstName&#34;],
+            &#34;lastName&#34;: data[&#34;lastName&#34;],
+            &#34;jobTitle&#34;: data.get(&#34;jobTitle&#34;, &#34;&#34;),
+            &#34;companyName&#34;: data.get(&#34;companyName&#34;, &#34;&#34;),
+            &#34;email&#34;: data.get(&#34;email&#34;, &#34;&#34;),
+            &#34;phone&#34;: data.get(&#34;phone&#34;, &#34;&#34;),
+            &#34;linkedin&#34;: data.get(&#34;linkedin&#34;, &#34;&#34;)
+        }
+        user.contacts.append(new_contact)
+        user.save()
+        return jsonify({&#34;message&#34;: &#34;Contact added successfully&#34;, &#34;contact&#34;: new_contact}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Unable to add contact&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.create_app"><code class="name flex">
+<span>def <span class="ident">create_app</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a server hosted on localhost</p>
+<p>:return: Flask object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_app():
+    &#34;&#34;&#34;
+    Creates a server hosted on localhost
+
+    :return: Flask object
+    &#34;&#34;&#34;
+    app = Flask(__name__)
+    app.secret_key = &#39;secret&#39;
+    app.config[&#34;JWT_SECRET_KEY&#34;] = &#34;softwareEngineering&#34;
+    app.config[&#34;JWT_ACCESS_TOKEN_EXPIRES&#34;] = timedelta(hours=1)
+    # make flask support CORS
+    CORS(app)
+    app.config[&#39;MAIL_SERVER&#39;] = &#39;smtp.mail.yahoo.com&#39;
+    app.config[&#39;MAIL_PORT&#39;] = 587
+    app.config[&#39;MAIL_USERNAME&#39;] = &#39;contactus_burnout@yahoo.com&#39;  # Your Gmail email address
+    app.config[&#39;MAIL_PASSWORD&#39;] = &#39;fpfkvuxxubnmzahw&#39;  # Your Gmail password or app-specific password
+    app.config[&#39;MAIL_USE_TLS&#39;] = True
+    app.config[&#39;MAIL_USE_SSL&#39;] = False
+        
+    return app</code></pre>
+</details>
+</dd>
+<dt id="backend.app.create_token"><code class="name flex">
+<span>def <span class="ident">create_token</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Login function that creates a jwt_token for the user and returns it
+Corresponds to API route /token</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/token&#39;, methods=[&#34;POST&#34;])
+def create_token():
+    &#34;&#34;&#34;
+    Login function that creates a jwt_token for the user and returns it
+    Corresponds to API route /token
+    &#34;&#34;&#34;
+    print(&#39;This is standard output&#39;)
+    try:
+        email = request.json.get(&#34;email&#34;, None)
+        password = request.json.get(&#34;password&#34;, None)
+        print(password)
+        user = Users.objects(
+            email=email, password=password
+        ).first()
+        if user is not None:
+            access_token = create_access_token(identity=email)
+            return jsonify({&#34;message&#34;: &#34;Login successful&#34;, &#34;access_token&#34;:access_token})
+        else:
+            print(&#34;Invalid email or password&#34;)
+            return jsonify({&#34;message&#34;: &#34;Invalid email or password&#34;}),401
+    except Exception as err:
+        print( err)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.delete_application"><code class="name flex">
+<span>def <span class="ident">delete_application</span></span>(<span>application_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes the given job application for the user.
+Corresponds to API route DELETE /applications/<application_id></p>
+<p>:param application_id: Application id to be deleted</p>
+<p>:return: JSON object with status and message</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/applications/&lt;int:application_id&gt;&#34;, methods=[&#34;DELETE&#34;])
+@jwt_required()
+def delete_application(application_id):
+    &#34;&#34;&#34;
+    Deletes the given job application for the user.
+    Corresponds to API route DELETE /applications/&lt;application_id&gt;
+    
+    :param application_id: Application id to be deleted
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        user = Users.objects(email=user_email).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        
+        # Filter out the application with the given ID
+        user.applications = [app for app in user.applications if app[&#39;id&#39;] != application_id]
+        user.save()
+        # You can add an email notification here if needed
+        return jsonify({&#34;message&#34;: &#34;Application deleted&#34;}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.email_reminders"><code class="name flex">
+<span>def <span class="ident">email_reminders</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def email_reminders():
+    users = Users.objects({})
+    for user in users:
+        current_applications =  user[&#34;applications&#34;]
+        for application in current_applications:
+            if application[&#34;status&#34;] != 3 or application[&#34;status&#34;] != 4:
+                try:
+                    # Send an email reminder
+                    to_email = user.email  # Use the user&#39;s email address
+                    subject = &#34;Job Application Reminder&#34;
+                    message = f&#34;Hello {user.fullName},\n\nThe following job application has not been submitted yet.\nJob Title: {application[&#39;jobTitle&#39;]}\nCompany: {application[&#39;companyName&#39;]}\nApply By: {application[&#39;date&#39;]}\n\nBest regards,\nYour Application Tracker&#34;
+                    send_email(to_email, subject, message)
+                except:
+                    return jsonify({&#34;error&#34;: &#34;EMAIL wasn&#39;t sent&#34;}), 400</code></pre>
+</details>
+</dd>
+<dt id="backend.app.fetch_resume"><code class="name flex">
+<span>def <span class="ident">fetch_resume</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves the resume file for the user and sends it back in a way that
+can be displayed in an iframe on the client-side.
+Corresponds to API route GET /fetchresume</p>
+<p>:return: response with file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/fetchresume&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def fetch_resume():
+    &#34;&#34;&#34;
+    Retrieves the resume file for the user and sends it back in a way that
+    can be displayed in an iframe on the client-side.
+    Corresponds to API route GET /fetchresume
+    
+    :return: response with file
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        if not hasattr(user, &#39;resume&#39;) or user.resume.length == 0:
+            return jsonify({&#34;error&#34;: &#34;No resume uploaded&#34;}), 404
+        user.resume.seek(0)  # Reset the file pointer to the beginning
+        file_like_object = BytesIO(user.resume.read())
+        return send_file(
+            file_like_object,
+            mimetype=&#34;application/pdf&#34;,
+            as_attachment=False  # Set to False for inline display
+        )
+    except Exception as ex:
+        print(ex)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.form_builder"><code class="name flex">
+<span>def <span class="ident">form_builder</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/resumebuilder&#39;, methods=[&#39;POST&#39;])
+def form_builder():
+    try:
+        # Assuming the request data is in JSON format
+        data = request.json
+
+        # Log the data (you can customize this part)
+        print(&#34;Received Form Data:&#34;)
+        for key, value in data.items():
+            print(f&#34;{key}: {value}&#34;)
+
+        # Generate PDF
+        pdf_data = generate_pdf(data)
+
+        # Send the PDF file as a response
+        return send_file(pdf_data, mimetype=&#39;application/msword&#39;, as_attachment=True,
+                         attachment_filename=&#39;generated_resume.docx&#39;)
+    except Exception as e:
+        print(f&#34;Error processing form data: {str(e)}&#34;)
+        return &#34;Error processing form data&#34;, 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.generate_pdf"><code class="name flex">
+<span>def <span class="ident">generate_pdf</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_pdf(data):
+    doc = Document()
+
+    # Set page margins to fit within one page
+    sections = doc.sections
+    for section in sections:
+        section.left_margin = Pt(36)  # 0.5 inch
+        section.right_margin = Pt(36)  # 0.5 inch
+        section.top_margin = Pt(36)  # 0.5 inch
+        section.bottom_margin = Pt(36)  # 0.5 inch
+
+    # Helper function to add heading with format
+    def add_heading_with_format(doc, text, font_size=16, is_bold=True):
+        p = doc.add_paragraph()
+        run = p.add_run(text)
+        if is_bold:
+            run.bold = True
+        p.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        run.font.size = Pt(font_size)
+
+    # Function to add details section
+    def add_details_section(doc, section_title, details, is_bold_title=True):
+        if section_title:
+            add_heading_with_format(doc, section_title, font_size=14, is_bold=True)
+        for detail in details:
+            for key, value in detail.items():
+                if key == &#34;company&#34;:
+                    p = doc.add_paragraph()
+                    run = p.add_run(value)
+                    run.bold = True
+                    p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                elif key == &#34;project_title&#34;:
+                    # Add the value of &#34;project_title&#34; with bold formatting
+                    p = doc.add_paragraph()
+                    run = p.add_run(value)
+                    run.bold = True
+                    p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                elif key == &#34;descriptionc&#34;:
+                    # Add the value of &#34;descriptionc&#34; without &#34;descriptionc&#34; prefix
+                    doc.add_paragraph(value, style=&#34;List Bullet&#34;)
+                elif key != &#34;descriptionc&#34; and key != &#34;level&#34; and key != &#34;extracurricularActivities&#34;:
+                    if key == &#34;university&#34;:
+                        # Add the value of &#34;university&#34; with bold formatting and without a bullet
+                        p = doc.add_paragraph()
+                        run = p.add_run(&#34;University: &#34; + value)
+                        run.bold = True
+                        p.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+                    else:
+                        doc.add_paragraph(f&#34;{value}&#34;, style=&#34;List Bullet&#34;)
+
+    # Title
+    add_heading_with_format(doc, &#34;Resume&#34;, font_size=18, is_bold=True)
+
+    # Contact Information
+    add_heading_with_format(doc, &#34;Contact Information&#34;, font_size=16, is_bold=True)
+    doc.add_paragraph(&#34;Name: &#34; + data[&#34;name&#34;])
+    doc.add_paragraph(&#34;Address: &#34; + data[&#34;address&#34;])
+    doc.add_paragraph(&#34;Email: &#34; + data[&#34;email&#34;])
+    doc.add_paragraph(&#34;LinkedIn: &#34; + data[&#34;linkedin&#34;])
+    doc.add_paragraph(&#34;Phone: &#34; + data[&#34;phone&#34;])
+
+    # Education section
+    add_details_section(doc, &#34;Education&#34;, data[&#34;education&#34;])
+
+    # Skills section
+    skills = data[&#34;skills&#34;]
+    skills_text = &#34;, &#34;.join(skill[&#34;skills&#34;] for skill in skills)
+    add_heading_with_format(doc, &#34;Skills&#34;, font_size=14, is_bold=True)
+    doc.add_paragraph(skills_text, style=&#34;List Bullet&#34;)
+
+    # Work Experience section
+    add_heading_with_format(doc, &#34;Work Experience&#34;, font_size=16, is_bold=True)
+    for entry in data[&#34;workExperience&#34;]:
+        add_details_section(doc, &#34;&#34;, [entry], is_bold_title=False)  # Removed the &#34;Work Entry&#34; heading
+
+    # Projects section
+    add_heading_with_format(doc, &#34;Projects&#34;, font_size=16, is_bold=True)
+    for project in data[&#34;projects&#34;]:
+        add_details_section(doc, &#34;&#34;, [project], is_bold_title=False)  # Removed repeated &#34;Project&#34; heading
+
+    # Save the document to a .docx file
+
+    word_buffer = BytesIO()
+    output_file_path = &#34;generated_resume.docx&#34;
+    doc.save(word_buffer)
+    word_buffer.seek(0)
+
+    return word_buffer</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_contacts"><code class="name flex">
+<span>def <span class="ident">get_contacts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves contacts for the logged-in user.
+Corresponds to API route GET /users/contacts</p>
+<p>:return: JSON object with user's contacts</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/users/contacts&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_contacts():
+    &#34;&#34;&#34;
+    Retrieves contacts for the logged-in user.
+    Corresponds to API route GET /users/contacts
+    
+    :return: JSON object with user&#39;s contacts
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        contacts = user.contacts
+        return jsonify({&#34;contacts&#34;: contacts}), 200
+    except Exception as e:
+        return jsonify({&#34;error&#34;: &#34;Unable to fetch contacts&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_dashboard_data"><code class="name flex">
+<span>def <span class="ident">get_dashboard_data</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets user's stats data from the database
+Corresponds to API route GET /dashboard</p>
+<p>:return: JSON object with stats data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/dashboard&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_dashboard_data():
+    &#34;&#34;&#34;
+    Gets user&#39;s stats data from the database
+    Corresponds to API route GET /dashboard
+    
+    :return: JSON object with stats data
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        users = Users.objects()         
+        user = users.filter(email=user_email).first()
+        applications = user[&#34;applications&#34;]
+        print(&#34;Task 1/3: Getting Job Application Status Counts&#34;)
+        job_app_status, applications_created, interviews_completed = get_job_app_status(applications)
+        print(&#34;Task 2/3: Getting Job Applications Created in the last 6 months&#34;)
+        six_months_job_count = get_last_six_months_job_counts(applications)
+        print(&#34;Task 3/3: Getting latest 4 applications&#34;)
+        last_four_apps = get_last_four_jobs(applications)
+        contacts_saved = len(user[&#34;contacts&#34;])
+        notes_taken = len([1 for app in applications if &#34;notes&#34; in app and len(app[&#34;notes&#34;]&gt;0)])
+        return jsonify({
+            &#34;six_months_jobs_count&#34;: six_months_job_count,
+            &#34;job_applications_status&#34;: job_app_status,
+            &#34;applications_created&#34;: applications_created,
+            &#34;interviews_completed&#34;: interviews_completed,
+            &#34;contacts_saved&#34;: contacts_saved,
+            &#34;notes_taken&#34;: notes_taken,
+            &#34;last_four_apps&#34;: last_four_apps
+        }),200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;, &#34;error msg&#34;:e}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_data"><code class="name flex">
+<span>def <span class="ident">get_data</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets user's applications from the database.
+Corresponds to API route GET /application</p>
+<p>:return: JSON object with application data as a list of application objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/applications&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_data():
+    &#34;&#34;&#34;
+    Gets user&#39;s applications from the database.
+    Corresponds to API route GET /application
+    
+    :return: JSON object with application data as a list of application objects
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        users = Users.objects()
+        user = users.filter(email=user_email).first()
+        applications = user[&#34;applications&#34;]
+        return jsonify(applications)
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_job_app_status"><code class="name flex">
+<span>def <span class="ident">get_job_app_status</span></span>(<span>applications)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the number of job applications in each job status</p>
+<p>:param: applications: a list of all the job applications the user created</p>
+<p>:return: a list containing objects with name and count as the fields for the different statuses the applications are in and the number of applications in those statuses.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_job_app_status(applications):
+    &#34;&#34;&#34;
+    Returns the number of job applications in each job status
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with name and count as the fields for the different statuses the applications are in and the number of applications in those statuses.
+    &#34;&#34;&#34;
+    job_app_status = {
+        &#34;Wishlist&#34;: 0,
+        &#34;Applied&#34;: 0,
+        &#34;Interviewed&#34;: 0,
+        &#34;Rejected&#34;: 0,
+    }
+    for application in applications:
+        # if application[&#34;stage&#34;]==&#34;Wishlist&#34;:
+        if int(application[&#34;stage&#34;]) == 1:
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Applied&#34;:
+        elif int(application[&#34;stage&#34;]) == 2:
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Interviewed&#34;:
+        elif int(application[&#34;stage&#34;]) == 3:
+            job_app_status[&#34;Interviewed&#34;] += 1
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+        # elif application[&#34;stage&#34;]==&#34;Rejected&#34;:
+        elif int(application[&#34;stage&#34;]) == 4:
+            job_app_status[&#34;Rejected&#34;] += 1
+            job_app_status[&#34;Interviewed&#34;] += 1
+            job_app_status[&#34;Applied&#34;] += 1
+            job_app_status[&#34;Wishlist&#34;] += 1
+    res = [
+        {&#34;name&#34;: &#34;Jobs Saved&#34;, &#34;count&#34;: job_app_status[&#34;Wishlist&#34;]},
+        {&#34;name&#34;: &#34;Applied&#34;, &#34;count&#34;: job_app_status[&#34;Applied&#34;]},
+        {&#34;name&#34;: &#34;Interviewed&#34;, &#34;count&#34;: job_app_status[&#34;Interviewed&#34;]},
+        {&#34;name&#34;: &#34;Rejected&#34;, &#34;count&#34;: job_app_status[&#34;Rejected&#34;]},
+    ]
+    return res,job_app_status[&#34;Applied&#34;],job_app_status[&#34;Interviewed&#34;]</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_last_four_jobs"><code class="name flex">
+<span>def <span class="ident">get_last_four_jobs</span></span>(<span>applications)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the latest 4 job application details based on the date field in the job application.</p>
+<p>:param: applications: a list of all the job applications the user created</p>
+<p>:return: a list containing objects with jobTitle, company and status for the latest 4 job applications based on the date field of the ob application</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_last_four_jobs(applications):
+    &#34;&#34;&#34;
+    Returns the latest 4 job application details based on the date field in the job application.
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with jobTitle, company and status for the latest 4 job applications based on the date field of the ob application
+    &#34;&#34;&#34;
+    appStatus = {&#39;1&#39;: &#34;Wishlist&#34;, &#39;2&#39;: &#34;Applied&#34;, &#39;3&#39;: &#34;Interviewed&#34;, &#39;4&#39;:&#34;Rejected&#34;}
+    apps = sorted(applications, key=lambda application: datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;), reverse=True)[:4]
+    res = [
+        {
+            &#34;jobTitle&#34;: application[&#34;jobTitle&#34;],
+            &#34;company&#34;: application[&#34;companyName&#34;],
+            &#34;status&#34;: appStatus[application[&#34;stage&#34;]],
+        }
+        for application in apps
+    ]
+    return res</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_last_six_months_job_counts"><code class="name flex">
+<span>def <span class="ident">get_last_six_months_job_counts</span></span>(<span>applications)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the number of jobs created in each month for the last 6 months</p>
+<p>:param: applications: a list of all the job applications the user created</p>
+<p>:return: a list containing objects with Month, Jobs Created as the fields for the last six months</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_last_six_months_job_counts(applications):
+    &#34;&#34;&#34;
+    Returns the number of jobs created in each month for the last 6 months
+
+    :param: applications: a list of all the job applications the user created
+    
+    :return: a list containing objects with Month, Jobs Created as the fields for the last six months
+    &#34;&#34;&#34;
+    month_map = {
+        index + 1: val
+        for index, val in enumerate(
+            [
+                &#34;Jan&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Apr&#34;,
+                &#34;May&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Aug&#34;,
+                &#34;Sep&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Dec&#34;,
+            ]
+        )
+    }
+    # Create a defaultdict to store date strings for each month
+    result_dict = defaultdict(list)
+    # Get the current date
+    current_date = (datetime.now().replace(day=1) + timedelta(days=32)).replace(day=1)
+    # Iterate over the last six months
+    for i in range(6):
+        # Calculate the start and end date of the current month
+        end_of_month = current_date.replace(day=1) - timedelta(days=1)
+        start_of_month = end_of_month.replace(day=1)
+        # Filter date objects that belong to the current month
+        current_month_dates = [
+            datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;).strftime(&#34;%Y-%m-%d&#34;)
+            for application in applications
+            if start_of_month
+            &lt;= datetime.strptime(application[&#34;date&#34;], &#34;%Y-%m-%d&#34;)
+            &lt;= end_of_month
+        ]
+        # Store the result in the dictionary
+        result_dict[
+            &#34;%s %s&#34; % (month_map[start_of_month.month], start_of_month.year)
+        ] = len(current_month_dates)
+        # Move to the previous month
+        current_date = start_of_month
+    res = [
+        {&#34;Month&#34;: key, &#34;Jobs Created&#34;: result_dict[key]}
+        for key in list(result_dict.keys())[::-1]
+    ]
+    return res</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_new_application_id"><code class="name flex">
+<span>def <span class="ident">get_new_application_id</span></span>(<span>user)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the next value to be used for new application</p>
+<p>:param: user_id: User id of the active user</p>
+<p>:return: key with new application_id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_new_application_id(user):
+    &#34;&#34;&#34;
+    Returns the next value to be used for new application
+
+    :param: user_id: User id of the active user
+
+    :return: key with new application_id
+    &#34;&#34;&#34;
+
+    if len(user[&#34;applications&#34;]) == 0:
+        return 1
+
+    new_id = 0
+    for a in user[&#34;applications&#34;]:
+        new_id = max(new_id, a[&#34;id&#34;])
+
+    return new_id + 1</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_new_user_id"><code class="name flex">
+<span>def <span class="ident">get_new_user_id</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the next value to be used for new user</p>
+<p>:return: key with new user_id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_new_user_id():
+    &#34;&#34;&#34;
+    Returns the next value to be used for new user
+
+    :return: key with new user_id
+    &#34;&#34;&#34;
+    user_objects = Users.objects()
+    if len(user_objects) == 0:
+        return 1
+
+    new_id = 0
+    for a in user_objects:
+        new_id = max(new_id, a[&#34;id&#34;])
+
+    return new_id + 1</code></pre>
+</details>
+</dd>
+<dt id="backend.app.get_resume"><code class="name flex">
+<span>def <span class="ident">get_resume</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieves the resume file for the user
+Corresponds to API route GET /downloadresume</p>
+<p>:return: response with file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/downloadresume&#34;, methods=[&#34;GET&#34;])
+@jwt_required()
+def get_resume():
+    &#34;&#34;&#34;
+    Retrieves the resume file for the user
+    Corresponds to API route GET /downloadresume
+    
+    :return: response with file
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        try:
+            if len(user.resume.read()) == 0:
+                raise FileNotFoundError
+            else:
+                user.resume.seek(0)
+        except:
+            return jsonify({&#34;error&#34;: &#34;resume could not be found&#34;}), 400
+    
+        file_like_object = BytesIO(user.resume.read())
+        if hasattr(user, &#39;resume&#39;):
+            response = send_file(
+            file_like_object,
+            mimetype=&#34;application/pdf&#34;,
+            download_name = user.resume.filename,
+            as_attachment=True,
+            )
+            response.headers[&#34;x-filename&#34;] = &#34;resume.pdf&#34;
+            response.headers[&#34;Access-Control-Expose-Headers&#34;] = &#34;x-filename&#34;
+            return response, 200
+        
+    except Exception as ex:
+            print(ex)
+            return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.health_check"><code class="name flex">
+<span>def <span class="ident">health_check</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return 200. Just a health check method to check if flask application is running.
+Corresponds to API route /</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/&#34;)
+@cross_origin()
+def health_check():
+    &#34;&#34;&#34;
+    Return 200. Just a health check method to check if flask application is running.
+    Corresponds to API route /
+    &#34;&#34;&#34;
+    return jsonify({&#34;message&#34;: &#34;Server up and running&#34;}), 200</code></pre>
+</details>
+</dd>
+<dt id="backend.app.logout"><code class="name flex">
+<span>def <span class="ident">logout</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Logout the user and clear their session.
+Corresponds to API route /logout
+tags:
+- User Logout
+responses:
+200:
+description: Logout successful</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/logout&#34;, methods=[&#34;POST&#34;])
+def logout():
+    &#34;&#34;&#34;
+    Logout the user and clear their session.
+    Corresponds to API route /logout
+    tags:
+    - User Logout
+    responses:
+    200:
+        description: Logout successful
+    &#34;&#34;&#34;
+    response = jsonify({&#34;msg&#34;: &#34;logout successful&#34;})
+    unset_jwt_cookies(response)
+    return response</code></pre>
+</details>
+</dd>
+<dt id="backend.app.register"><code class="name flex">
+<span>def <span class="ident">register</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Signup function that creates a new user object and adds it to the database.
+Corresponds to API route /register</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/register&#34;, methods=[&#34;POST&#34;])
+def register():
+    &#34;&#34;&#34;
+    Signup function that creates a new user object and adds it to the database.
+    Corresponds to API route /register
+    &#34;&#34;&#34;
+    email = request.json.get(&#39;email&#39;, None)
+    password = request.json.get(&#39;password&#39;, None)
+    first_name = request.json.get(&#39;firstName&#39;, None)
+    last_name = request.json.get(&#39;lastName&#39;, None)
+    print(email)
+    new_document = {
+    &#34;email&#34;: email,
+    &#34;password&#34;: password,
+    &#34;first_name&#34;: first_name,
+    &#34;last_name&#34;: last_name,
+    }
+    query = {
+        &#34;email&#34;: email,
+    }
+    try:
+        user = Users(
+            firstName=first_name,
+            lastName=last_name,
+            email=email,
+            password=password,
+            applications=[]
+        )
+        user.save()
+        return jsonify(user.to_json()), 200
+    except Exception as e:
+        response = jsonify({&#34;msg&#34;: &#34;register failed&#34;})
+    return response</code></pre>
+</details>
+</dd>
+<dt id="backend.app.send_email"><code class="name flex">
+<span>def <span class="ident">send_email</span></span>(<span>to_email, subject, message)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_email(to_email, subject, message):
+    # Set up your email and password here, or use environment variables
+    gmail_user = &#34;amoghmahesh14@gmail.com&#34;
+    gmail_password = os.getenv(&#34;email_password&#34;)
+
+    msg = MIMEMultipart()
+    msg[&#39;From&#39;] = gmail_user
+    msg[&#39;To&#39;] = to_email
+    msg[&#39;Subject&#39;] = subject
+
+    # Attach the message
+    msg.attach(MIMEText(message, &#39;plain&#39;))
+
+    try:
+        server = smtplib.SMTP(&#39;smtp.gmail.com&#39;, 587)
+        server.starttls()
+        server.login(gmail_user, gmail_password)
+        text = msg.as_string()
+        server.sendmail(gmail_user, to_email, text)
+        server.quit()
+        print(&#34;Email sent successfully!&#34;)
+    except Exception as e:
+        print(&#34;Email could not be sent. Error: {}&#34;.format(str(e)))</code></pre>
+</details>
+</dd>
+<dt id="backend.app.update_application"><code class="name flex">
+<span>def <span class="ident">update_application</span></span>(<span>application_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the given job application for the user with the details from the request body
+Corresponds to API route PUT /applications/<application_id></p>
+<p>:param application_id: Application id to be modified</p>
+<p>:return: JSON object with status and message</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/applications/&lt;int:application_id&gt;&#34;, methods=[&#34;PUT&#34;])
+@jwt_required()
+def update_application(application_id):
+    &#34;&#34;&#34;
+    Updates the given job application for the user with the details from the request body
+    Corresponds to API route PUT /applications/&lt;application_id&gt;
+    
+    :param application_id: Application id to be modified
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        user_email = get_jwt_identity()
+        request_data = request.json.get(&#34;application&#34;, {})
+        print(&#34;HERE:&#34;)
+        print(request_data)
+        user = Users.objects(email=user_email).first()
+        if not user:
+            return jsonify({&#34;error&#34;: &#34;User not found&#34;}), 404
+        application_to_update = None
+        for app in user.applications:
+            if app[&#34;id&#34;] == application_id:
+                for key in request_data:
+                    app[key] = request_data[key]
+                application_to_update = app
+                break
+        if application_to_update is None:
+            return jsonify({&#34;error&#34;: &#34;Application not found&#34;}), 404
+        user.save()
+        return jsonify(application_to_update), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: str(e)}), 500</code></pre>
+</details>
+</dd>
+<dt id="backend.app.upload_resume"><code class="name flex">
+<span>def <span class="ident">upload_resume</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Uploads resume file or updates an existing resume for the user
+Corresponds to API route POST /resume</p>
+<p>:return: JSON object with status and message</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#34;/resume&#34;, methods=[&#34;POST&#34;])
+@jwt_required()
+def upload_resume():
+    &#34;&#34;&#34;
+    Uploads resume file or updates an existing resume for the user
+    Corresponds to API route POST /resume
+    
+    :return: JSON object with status and message
+    &#34;&#34;&#34;
+    try:
+        current_user = get_jwt_identity()
+        user = Users.objects(email=current_user).first()
+        try:
+            file = request.files[&#34;file&#34;]
+        except:
+            return jsonify({&#34;error&#34;: &#34;No resume file found in the input&#34;}), 400
+
+        if not hasattr(user, &#39;resume&#39;):
+            # There is no file
+            user.resume.put(file.stream, content_type=file.content_type, filename=file.filename)
+            user.save()
+            return jsonify({&#34;message&#34;: &#34;resume successfully uploaded&#34;}), 200
+        else:
+            # There is a file, we are replacing it
+            user.resume.replace(file.stream, content_type=file.content_type, filename=file.filename)
+            user.save()
+            return jsonify({&#34;message&#34;: &#34;resume successfully replaced&#34;}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({&#34;error&#34;: &#34;Internal server error&#34;}), 500</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="backend.app.ResumeDocument"><code class="flex name class">
+<span>class <span class="ident">ResumeDocument</span></span>
+<span>(</span><span>*args, **values)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resume document class. Stores the resume as a binary file object.</p>
+<p>Initialise a document or an embedded document.</p>
+<p>:param values: A dictionary of keys and values for the document.
+It may contain additional reserved keywords, e.g. "__auto_convert".
+:param __auto_convert: If True, supplied values will be converted
+to Python-type values via each field's <code>to_python</code> method.
+:param _created: Indicates whether this is a brand new document
+or whether it's already been persisted before. Defaults to true.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ResumeDocument(db.Document):
+    &#34;&#34;&#34;
+    Resume document class. Stores the resume as a binary file object.
+    &#34;&#34;&#34;
+    content = db.BinaryField()
+    filename = db.StringField()
+
+    def to_json(self):
+        &#34;&#34;&#34;
+        Returns the user details in JSON object
+
+        :return: JSON object
+        &#34;&#34;&#34;
+        return { &#34;fullName&#34;: self.firstName, &#34;lastName&#34;: self.lastName,  &#34;email&#34;: self.email}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>flask_mongoengine.Document</li>
+<li>mongoengine.document.Document</li>
+<li>mongoengine.base.document.BaseDocument</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="backend.app.ResumeDocument.DoesNotExist"><code class="name">var <span class="ident">DoesNotExist</span></code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+</dd>
+<dt id="backend.app.ResumeDocument.MultipleObjectsReturned"><code class="name">var <span class="ident">MultipleObjectsReturned</span></code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+</dd>
+<dt id="backend.app.ResumeDocument.objects"><code class="name">var <span class="ident">objects</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="backend.app.ResumeDocument.content"><code class="name">var <span class="ident">content</span></code></dt>
+<dd>
+<div class="desc"><p>A binary data field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.ResumeDocument.filename"><code class="name">var <span class="ident">filename</span></code></dt>
+<dd>
+<div class="desc"><p>A unicode string field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.ResumeDocument.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>A field wrapper around MongoDB's ObjectIds.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="backend.app.ResumeDocument.to_json"><code class="name flex">
+<span>def <span class="ident">to_json</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the user details in JSON object</p>
+<p>:return: JSON object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_json(self):
+    &#34;&#34;&#34;
+    Returns the user details in JSON object
+
+    :return: JSON object
+    &#34;&#34;&#34;
+    return { &#34;fullName&#34;: self.firstName, &#34;lastName&#34;: self.lastName,  &#34;email&#34;: self.email}</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="backend.app.Users"><code class="flex name class">
+<span>class <span class="ident">Users</span></span>
+<span>(</span><span>*args, **values)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Users class. Holds full name, username, password, email, list of applications, list of contacts and a resume</p>
+<p>Initialise a document or an embedded document.</p>
+<p>:param values: A dictionary of keys and values for the document.
+It may contain additional reserved keywords, e.g. "__auto_convert".
+:param __auto_convert: If True, supplied values will be converted
+to Python-type values via each field's <code>to_python</code> method.
+:param _created: Indicates whether this is a brand new document
+or whether it's already been persisted before. Defaults to true.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Users(db.Document):
+    &#34;&#34;&#34;
+    Users class. Holds full name, username, password, email, list of applications, list of contacts and a resume
+    &#34;&#34;&#34;
+
+    firstName = db.StringField()
+    lastName = db.StringField()
+    email    = db.StringField()
+    password = db.StringField()
+    applications = db.ListField()
+    contacts = db.ListField()
+    resume = db.FileField()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>flask_mongoengine.Document</li>
+<li>mongoengine.document.Document</li>
+<li>mongoengine.base.document.BaseDocument</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="backend.app.Users.DoesNotExist"><code class="name">var <span class="ident">DoesNotExist</span></code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+</dd>
+<dt id="backend.app.Users.MultipleObjectsReturned"><code class="name">var <span class="ident">MultipleObjectsReturned</span></code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+</dd>
+<dt id="backend.app.Users.objects"><code class="name">var <span class="ident">objects</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="backend.app.Users.applications"><code class="name">var <span class="ident">applications</span></code></dt>
+<dd>
+<div class="desc"><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+<p>If using with ReferenceFields see: :ref:<code>many-to-many-with-listfields</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Required means it cannot be empty - as the default for ListFields is []</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+    value = instance._data.get(self.name)
+    LazyReferenceField = _import_class(&#34;LazyReferenceField&#34;)
+    GenericLazyReferenceField = _import_class(&#34;GenericLazyReferenceField&#34;)
+    if (
+        isinstance(self.field, (LazyReferenceField, GenericLazyReferenceField))
+        and value
+    ):
+        instance._data[self.name] = [self.field.build_lazyref(x) for x in value]
+    return super().__get__(instance, owner)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.contacts"><code class="name">var <span class="ident">contacts</span></code></dt>
+<dd>
+<div class="desc"><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+<p>If using with ReferenceFields see: :ref:<code>many-to-many-with-listfields</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Required means it cannot be empty - as the default for ListFields is []</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+    value = instance._data.get(self.name)
+    LazyReferenceField = _import_class(&#34;LazyReferenceField&#34;)
+    GenericLazyReferenceField = _import_class(&#34;GenericLazyReferenceField&#34;)
+    if (
+        isinstance(self.field, (LazyReferenceField, GenericLazyReferenceField))
+        and value
+    ):
+        instance._data[self.name] = [self.field.build_lazyref(x) for x in value]
+    return super().__get__(instance, owner)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.email"><code class="name">var <span class="ident">email</span></code></dt>
+<dd>
+<div class="desc"><p>A unicode string field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.firstName"><code class="name">var <span class="ident">firstName</span></code></dt>
+<dd>
+<div class="desc"><p>A unicode string field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"><p>A field wrapper around MongoDB's ObjectIds.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.lastName"><code class="name">var <span class="ident">lastName</span></code></dt>
+<dd>
+<div class="desc"><p>A unicode string field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.password"><code class="name">var <span class="ident">password</span></code></dt>
+<dd>
+<div class="desc"><p>A unicode string field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    &#34;&#34;&#34;Descriptor for retrieving a value from a field in a document.&#34;&#34;&#34;
+    if instance is None:
+        # Document class being used rather than a document object
+        return self
+
+    # Get value from document instance if available
+    return instance._data.get(self.name)</code></pre>
+</details>
+</dd>
+<dt id="backend.app.Users.resume"><code class="name">var <span class="ident">resume</span></code></dt>
+<dd>
+<div class="desc"><p>A GridFS storage field.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, owner):
+    if instance is None:
+        return self
+
+    # Check if a file already exists for this model
+    grid_file = instance._data.get(self.name)
+    if not isinstance(grid_file, self.proxy_class):
+        grid_file = self.get_proxy_obj(key=self.name, instance=instance)
+        instance._data[self.name] = grid_file
+
+    if not grid_file.key:
+        grid_file.key = self.name
+        grid_file.instance = instance
+    return grid_file</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="backend" href="index.html">backend</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="backend.app.add_application" href="#backend.app.add_application">add_application</a></code></li>
+<li><code><a title="backend.app.add_contact" href="#backend.app.add_contact">add_contact</a></code></li>
+<li><code><a title="backend.app.create_app" href="#backend.app.create_app">create_app</a></code></li>
+<li><code><a title="backend.app.create_token" href="#backend.app.create_token">create_token</a></code></li>
+<li><code><a title="backend.app.delete_application" href="#backend.app.delete_application">delete_application</a></code></li>
+<li><code><a title="backend.app.email_reminders" href="#backend.app.email_reminders">email_reminders</a></code></li>
+<li><code><a title="backend.app.fetch_resume" href="#backend.app.fetch_resume">fetch_resume</a></code></li>
+<li><code><a title="backend.app.form_builder" href="#backend.app.form_builder">form_builder</a></code></li>
+<li><code><a title="backend.app.generate_pdf" href="#backend.app.generate_pdf">generate_pdf</a></code></li>
+<li><code><a title="backend.app.get_contacts" href="#backend.app.get_contacts">get_contacts</a></code></li>
+<li><code><a title="backend.app.get_dashboard_data" href="#backend.app.get_dashboard_data">get_dashboard_data</a></code></li>
+<li><code><a title="backend.app.get_data" href="#backend.app.get_data">get_data</a></code></li>
+<li><code><a title="backend.app.get_job_app_status" href="#backend.app.get_job_app_status">get_job_app_status</a></code></li>
+<li><code><a title="backend.app.get_last_four_jobs" href="#backend.app.get_last_four_jobs">get_last_four_jobs</a></code></li>
+<li><code><a title="backend.app.get_last_six_months_job_counts" href="#backend.app.get_last_six_months_job_counts">get_last_six_months_job_counts</a></code></li>
+<li><code><a title="backend.app.get_new_application_id" href="#backend.app.get_new_application_id">get_new_application_id</a></code></li>
+<li><code><a title="backend.app.get_new_user_id" href="#backend.app.get_new_user_id">get_new_user_id</a></code></li>
+<li><code><a title="backend.app.get_resume" href="#backend.app.get_resume">get_resume</a></code></li>
+<li><code><a title="backend.app.health_check" href="#backend.app.health_check">health_check</a></code></li>
+<li><code><a title="backend.app.logout" href="#backend.app.logout">logout</a></code></li>
+<li><code><a title="backend.app.register" href="#backend.app.register">register</a></code></li>
+<li><code><a title="backend.app.send_email" href="#backend.app.send_email">send_email</a></code></li>
+<li><code><a title="backend.app.update_application" href="#backend.app.update_application">update_application</a></code></li>
+<li><code><a title="backend.app.upload_resume" href="#backend.app.upload_resume">upload_resume</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="backend.app.ResumeDocument" href="#backend.app.ResumeDocument">ResumeDocument</a></code></h4>
+<ul class="">
+<li><code><a title="backend.app.ResumeDocument.DoesNotExist" href="#backend.app.ResumeDocument.DoesNotExist">DoesNotExist</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.MultipleObjectsReturned" href="#backend.app.ResumeDocument.MultipleObjectsReturned">MultipleObjectsReturned</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.content" href="#backend.app.ResumeDocument.content">content</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.filename" href="#backend.app.ResumeDocument.filename">filename</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.id" href="#backend.app.ResumeDocument.id">id</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.objects" href="#backend.app.ResumeDocument.objects">objects</a></code></li>
+<li><code><a title="backend.app.ResumeDocument.to_json" href="#backend.app.ResumeDocument.to_json">to_json</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="backend.app.Users" href="#backend.app.Users">Users</a></code></h4>
+<ul class="">
+<li><code><a title="backend.app.Users.DoesNotExist" href="#backend.app.Users.DoesNotExist">DoesNotExist</a></code></li>
+<li><code><a title="backend.app.Users.MultipleObjectsReturned" href="#backend.app.Users.MultipleObjectsReturned">MultipleObjectsReturned</a></code></li>
+<li><code><a title="backend.app.Users.applications" href="#backend.app.Users.applications">applications</a></code></li>
+<li><code><a title="backend.app.Users.contacts" href="#backend.app.Users.contacts">contacts</a></code></li>
+<li><code><a title="backend.app.Users.email" href="#backend.app.Users.email">email</a></code></li>
+<li><code><a title="backend.app.Users.firstName" href="#backend.app.Users.firstName">firstName</a></code></li>
+<li><code><a title="backend.app.Users.id" href="#backend.app.Users.id">id</a></code></li>
+<li><code><a title="backend.app.Users.lastName" href="#backend.app.Users.lastName">lastName</a></code></li>
+<li><code><a title="backend.app.Users.objects" href="#backend.app.Users.objects">objects</a></code></li>
+<li><code><a title="backend.app.Users.password" href="#backend.app.Users.password">password</a></code></li>
+<li><code><a title="backend.app.Users.resume" href="#backend.app.Users.resume">resume</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

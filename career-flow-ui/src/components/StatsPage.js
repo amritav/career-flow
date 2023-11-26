@@ -68,7 +68,7 @@ function StatsPage(props) {
       url: "/dashboard",
       headers: {
         // Authorization: "Bearer " + props.state.token,
-        Authorization: "Bearer 1.4b3cf8e0-2004-4cb2-b1ce-0eede94b97e4",
+        Authorization: "Bearer " + props.appState.token,
       },
     })
       .then((response) => {
