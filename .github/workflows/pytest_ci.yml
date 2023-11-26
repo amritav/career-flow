@@ -12,9 +12,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-        MONGO_USER: ${{ secrets.MONGO_USER }}
-        MONGO_PASS: ${{ secrets.MONGO_PASS }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -27,6 +24,10 @@ jobs:
         pip install pytest pytest-cov coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install -r ./backend/requirements.txt
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.10.0
+      with:
+        mongodb-version: 5.0
     - name: Test with pytest, upload to codecov
       run: |
         cd ./backend
@@ -34,6 +35,7 @@ jobs:
         pwd
         pytest --cov-report xml:cov.xml --cov=./ ./
     - name: "Upload coverage to Codecov"
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       with:
-        fail_ci_if_error: true
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./backend/cov.xml
