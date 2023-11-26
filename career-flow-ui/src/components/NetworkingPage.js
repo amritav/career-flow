@@ -6,6 +6,7 @@ import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import axios from 'axios';
+import Papa from 'papaparse';
 
 function NetworkingPage(props) {
   const [openModal, setOpenModal] = useState(false);
@@ -90,6 +91,31 @@ function NetworkingPage(props) {
     setSearchQuery(e.target.value);
   };
 
+  function convertToCSV(data) {
+    const csv = Papa.unparse(data);
+    return csv;
+  }
+
+  const exportContactsToCSV = () => {
+    const csvData = convertToCSV(contacts);
+  
+    // Create a Blob containing the CSV data
+    const blob = new Blob([csvData], { type: 'text/csv' });
+  
+    // Create a URL for the Blob
+    const url = window.URL.createObjectURL(blob);
+  
+    // Create a download link and click it to trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contacts.csv';
+    a.click();
+  
+    // Release the URL object to free up resources
+    window.URL.revokeObjectURL(url);
+  };
+  
+
   return (
     <div>
       <Container maxWidth="lg">
@@ -97,9 +123,14 @@ function NetworkingPage(props) {
           <Typography variant="h4" component="h1">
             My Network
           </Typography>
-          <Button variant="contained" color="primary" onClick={handleOpenModal}>
+          <Box >
+          <Button variant="contained" color="primary" onClick={handleOpenModal} sx={{mr: 1}}>
             Add Contact
           </Button>
+          <Button variant="contained" color="primary" onClick={exportContactsToCSV}>
+            Export Contacts
+          </Button>
+          </Box>
         </Box>
         <Divider sx={{ mb: 10 }} />
         {contacts.length > 0 ? (
