@@ -1,13 +1,12 @@
 
 [![GitHub license](https://img.shields.io/github/license/kingan1/application-tracking-system)](https://github.com/kingan1/application-tracking-system/blob/main/LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10158209.svg)](https://doi.org/10.5281/zenodo.10158209)
-[![codecov](https://codecov.io/gh/kingan1/application-tracking-system/branch/main/graph/badge.svg)](https://codecov.io/gh/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues/kingan1/application-tracking-system)
-![GitHub issues](https://img.shields.io/github/issues-closed/kingan1/application-tracking-system)
-![GitHub top language](https://img.shields.io/github/languages/top/kingan1/application-tracking-system)
+[![DOI](https://zenodo.org/badge/715832425.svg)](https://zenodo.org/doi/10.5281/zenodo.10158208)
+[![codecov](https://codecov.io/gh/adi-kiran/career-flow/graph/badge.svg?token=BCVJENNVTK)](https://codecov.io/gh/adi-kiran/career-flow)
+![GitHub issues](https://img.shields.io/github/issues/adi-kiran/career-flow)
+![GitHub issues](https://img.shields.io/github/issues-closed/adi-kiran/career-flow)
+![GitHub top language](https://img.shields.io/github/languages/top/adi-kiran/career-flow)
 
-[![Build and Deploy Frontend](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/frontend_CI_CD.yml)
-[![Super Linter](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml/badge.svg)](https://github.com/kingan1/application-tracking-system/actions/workflows/super-linter.yml)
+[![Super Linter](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml/badge.svg)](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml)
 
 #      Career Flow - Your Job Tracking Assistant
 
