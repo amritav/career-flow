@@ -134,14 +134,15 @@ function TaskForm(props) {
                 </Modal.Body>
                 <Modal.Footer>
                   <Button
-                    variant="secondary"
+                    variant="outline-danger"
                     onClick={props.handleClose}
                     type="reset"
+                    size="sm"
                   >
-                    Close
+                    CLOSE
                   </Button>
-                  <Button variant="primary" type="submit">
-                    Save Changes
+                  <Button variant="danger" type="submit" size="sm">
+                    SAVE CHANGES
                   </Button>
                 </Modal.Footer>
               </Form>

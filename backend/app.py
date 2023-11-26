@@ -45,6 +45,9 @@ from functools import reduce
 from bson import json_util 
 from pymongo import MongoClient
 from flasgger import Swagger
+from flask_mail import Mail, Message
+import smtplib
+from smtplib import SMTPAuthenticationError
 
 from io import BytesIO
 
@@ -67,7 +70,14 @@ def create_app():
     jwt = JWTManager(app)
     # make flask support CORS
     CORS(app)
-    app.config["CORS_HEADERS"] = "Content-Type"
+    app.config['MAIL_SERVER'] = 'smtp.mail.yahoo.com'
+    app.config['MAIL_PORT'] = 587
+    app.config['MAIL_USERNAME'] = 'contactus_burnout@yahoo.com'  # Your Gmail email address
+    app.config['MAIL_PASSWORD'] = 'fpfkvuxxubnmzahw'  # Your Gmail password or app-specific password
+    app.config['MAIL_USE_TLS'] = True
+    app.config['MAIL_USE_SSL'] = False
+
+    mail = Mail(app)
 
     @app.route("/")
     @cross_origin()
@@ -283,6 +293,25 @@ def create_app():
         except Exception as e:
             print(e)
             return jsonify({"error": "Internal server error"}), 500
+        
+    @app.route('/sendEmail', methods=['POST'])
+    @jwt_required()
+    def send_email():
+        data = request.get_json()
+        email = data.get('email')
+        taskDetails = data.get('taskDetails')
+        
+        try:
+            msg = Message("Shared Task Details", sender="contactus_burnout@yahoo.com", recipients=[email])
+            msg.body = f"Task Details:\n{taskDetails}"
+            mail.send(msg)
+            return jsonify({"message": "Email sent successfully"}), 200
+
+        except SMTPAuthenticationError as e:
+            return jsonify({"error": "Authentication error. Check your credentials"}), 500
+
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500 
 
     @app.route("/downloadresume", methods=["GET"])
     @jwt_required()
