@@ -23,9 +23,9 @@
 <br>
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![DOI](https://zenodo.org/badge/698975832.svg)](https://zenodo.org/doi/10.5281/zenodo.10022867)
+[![DOI](https://zenodo.org/badge/698975832.svg)](https://zenodo.org/doi/10.5281/zenodo.10158208)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![Build Status](https://github.com/adi-kiran/burnout-healthgoalsapp/actions/workflows/build_repo.yml/badge.svg)
+![Build Status](https://github.com/adi-kiran/career-flow/actions/workflows/frontend_CI_CD.yml/badge.svg)
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 ![last commit](https://img.shields.io/github/last-commit/adi-kiran/burnout-healthgoalsapp)
 [![](https://tokei.rs/b1/github/adi-kiran/burnout-healthgoalsapp?branch=main)](https://github.com/adi-kiran/burnout-healthgoalsapp)
