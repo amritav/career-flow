@@ -240,6 +240,10 @@ mongod
 
 The success of these individuals and companies is a testament to the effectiveness of our application in revolutionizing the job application landscape.
  
+## Troubleshooting
+
+If you encounter issues while using Career Flow, here are some common problems and their solutions: [Tutorials.md](https://github.com/adi-kiran/career-flow/edit/main/Troubleshooting.md)
+
 ## Roadmap
 
 - [x] ~Make the pages modular using React~
