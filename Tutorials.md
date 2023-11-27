@@ -5,8 +5,10 @@ Hey there, career enthusiast! 🌟 Dive deep into the intricacies of Career Flow
 
 
 ## SignUp
+![ezgif com-video-to-gif (2)](https://github.com/adi-kiran/career-flow/assets/19224584/f11c6b48-e109-41ef-85f6-fbc3689509a7)
 
 ## SignIn
+![ezgif com-video-to-gif (3)](https://github.com/adi-kiran/career-flow/assets/19224584/8500d936-8701-4e5e-95f3-835b1417da77)
 
 ## Job Tracker Page
 ### Add Application and Drag & Drop Functionality
