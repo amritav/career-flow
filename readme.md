@@ -178,39 +178,45 @@ Follow these steps to set up and run the application on your local machine.
 * [pip](https://pip.pypa.io/en/stable/installation/) (Latest version 21.3 used as of 11/3)
 * [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
 * Docker
- 
-### Bring up the whole environment with Docker:
+
+## With Docker
+#### Bring up the whole environment with Docker:
 To run a testing environment, run:
 ```
 docker compose --profile all up
 ```
 This will run all components required for the system. It will spwan up the backend component, frontend component, and the db component.
-### Shutdown:
+#### Shutdown:
 ```
 docker compose --profile all down
 ```
 This will stop and remove all active containers spawned up by the docker compose file
-### Local UI development:
+#### Local UI development:
 ```
 docker compose --profile ui-dev down
 ```
 This profile spawns up all components except the UI component. This simplifies local development where UI code can be quickly modified and run manually and the dependent components are managed by docker.
-### Local API development:
+#### Local API development:
 ```
 docker compose --profile api-dev down
 ```
 This profile spawns up all components except the API component. This simplifies local development where API code can be quickly modified and run manually and the dependent components are managed by docker. This requires a small change:
 1. Add db_username env variable in your system with value localhost.
 
-## Hosting the Database:
+## Local Development
 This is required if you are not using docker.
-### Local MongoDB:
+#### Setting up the Database:
 1. Download [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/)
 2. Follow the [Installation Guide](https://docs.mongodb.com/guides/server/install/)
 3. In  ```app.py```  set  ```'host'```  string to  ```'localhost'```
 4. Run the local database: 
 ``` 
 mongod 
+```
+#### Starting the application
+Run the startup.sh script (which starts the frontend with ```npm run start``` and backend with ```flask run```)
+```
+startup.sh
 ```
       
 
