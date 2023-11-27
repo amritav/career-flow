@@ -2,7 +2,7 @@
 
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/adi-kiran/career-flow/assets/40449660/8c9037a2-1800-484b-a1a8-f05ca8e3aa82" alt="Logo" width="80" height="80">
+    <img src="https://github.com/adi-kiran/career-flow/assets/40449660/8c9037a2-1800-484b-a1a8-f05ca8e3aa82" alt="Logo" width="65" height="65">
   </a>
   <h3 align="center">Career Flow</h3>
   <p align="center">
