@@ -80,10 +80,10 @@ Experience an intuitive Kanban-style board, allowing you to visually manage appl
 - **Statistical Insights: 📈**
 Gain valuable insights into your application trends and success rates. Use this data to fine-tune your strategy and improve your chances.
 
-- **Contact Management: 📞 **
+- **Contact Management: 📞**
 Easily add and manage contacts from various companies, fostering professional relationships beyond just job applications.
 
-- **Resume Upload & Viewing: 📄 **
+- **Resume Upload & Viewing: 📄**
 Conveniently upload and review your resume within the app, ensuring it's readily available whenever needed, streamlining the application process.
   
 Happy job hunting! 🚀 With our app's streamlined features and intuitive interface, ace your applications and land your dream job with confidence. Download now and embark on your path to success! 🌟🎉
