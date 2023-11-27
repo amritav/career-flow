@@ -93,7 +93,7 @@ Navigate your career with CareerFlow 🚀 – Where your job search finds its pe
 
 # Table of Contents  
 
-- [Why Choose Career Flow?](#-why-choose-careerflow)
+- [Why Choose Career Flow!](#why-choose-career-flow!)
 - [Walkthrough](#walkthrough)
 - [Application Screenshots:](#application-screenshots)
   - [Homepage](#homepage)
