@@ -38,6 +38,7 @@ Our application keeps track of the jobs you've added to your wish list. It also 
     + [Shutdown](#shutdown)
 - [Hosting the Database](#hosting-the-database)
     + [Local MongoDB](#local-mongodb)
+- [Third-Party Dependencies](#third-party-dependencies)    
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
@@ -273,6 +274,29 @@ mongod
 ```
 * Recommended: Use a GUI such as [Studio 3T](https://studio3t.com/download/) to more easily interact with the database
 
+## Third-Party Dependencies
+
+ Frontend:
+
+| Package Name        | Version           | License  |
+| ------------- |:-------------:| -----:|
+| material-ui      | 4.12.4 | MIT License |
+| axios      | 1.6.1      |   MIT License |
+
+  
+  Backend:
+
+   | Package Name        | Version           | License  |
+| ------------- |:-------------:| -----:|
+| Flask      | 2.2.5 | BSD 3-Clause |
+| python_dotenv      | 0.21.1      |   BSD License (BSD-3-Clause) |
+| flask_jwt_extended      | 4.5.3      |   MIT License |
+| bcrypt      | 4.0.1      |   Apache License 2.0 |
+| flask_pymongo      | 2.3.0    |   BSD License (BSD) |
+| mongomock      | 4.1.2      |   BSD |
+| flasgger      | 0.9.7.1      |   MIT License |
+| coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
+| selenium | 3.0.2 | Apache 2.0 license |
 
 ## Troubleshooting
 
