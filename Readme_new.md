@@ -141,7 +141,7 @@ Link to the implementation video of the Career Flow application:
 
 <img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/de1068b3-7543-4e6f-9f16-8078e5b73847">
 
- ## My Netwok
+ ## My Network
 
 <img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/e3183b54-3472-4772-912c-862a7fc29ca0">
 
