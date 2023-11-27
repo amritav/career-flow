@@ -9,7 +9,7 @@ Here are some screenshots of the UI upgrades:
 
 #### A. Applications Page
 
-The previous UI required a number of button clicks to move an application from one column to another. Now all you have to do is drag and drop the application and it status gets updated! We implemented this using the DragNDrop react library!
+The previous UI required a number of button clicks to move an application from one column to another. Now all you have to do is drag and drop the application and it status gets updated! We implemented this using the DragNDrop react library! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-application-and-drag--drop-functionality))
 
 Previous Home Page
 ![old_home_screen](https://github.com/adi-kiran/career-flow/assets/36990588/7548b336-4947-4245-8d4c-cc88aab37fe0)
@@ -34,16 +34,16 @@ Updated Login Page
 ![LoginPage](https://github.com/adi-kiran/career-flow/assets/36990588/776ab398-f1cc-409a-9927-50e3ce99e489)
 
 # 2. Add Notes to Jobs and Email Job Details
-We now support adding notes to your saved job applications so you don't forget it! Also job details can now be shared to any email id. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md))
+We now support adding notes to your saved job applications so you don't forget it! Also job details can now be shared to any email id. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-application-note--share-application))
 
 # 3. Statistics Page
-We added a new page that displays metrics for the users job search. It shows graphs of the number of jobs created over the past 6 months, a ob search funnel graph of the number of jobs saved (wishlisted), number of applications submitted, number of interviews given, etc. We also show the user their latest activity, which is the applications that were recently created or updated. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md))
+We added a new page that displays metrics for the users job search. It shows graphs of the number of jobs created over the past 6 months, a ob search funnel graph of the number of jobs saved (wishlisted), number of applications submitted, number of interviews given, etc. We also show the user their latest activity, which is the applications that were recently created or updated. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#statistics-page))
 
 # 4. Network Page
-The network page allows users to quickly save contacts and grow their network so its easy to reach out when applying for jobs. They can also export their contacts to a CSV file! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md))
+The network page allows users to quickly save contacts and grow their network so its easy to reach out when applying for jobs. They can also export their contacts to a CSV file! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-search-and-export-contacts))
 
 # 5. Resume Viewer
-The resume page now allows users to view their resume in the browser itself, instead of needing to download it to view it. They can also directly print teir resume from this tab! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md))
+The resume page now allows users to view their resume in the browser itself, instead of needing to download it to view it. They can also directly print teir resume from this tab! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#upload-view-and-download-resume))
 
 # 6. Repo Quality
 
