@@ -32,31 +32,31 @@
 ![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/pytest_ci.yml/badge.svg)
 ![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/style_checker.yml/badge.svg)
 ![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/syntax_checker.yml/badge.svg)
-[![codecov](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp/graph/badge.svg?token=8DO6VMEZ7J)](https://codecov.io/gh/adi-kiran/burnout-healthgoalsapp)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/adi-kiran/burnout-healthgoalsapp)
+[![codecov](https://codecov.io/gh/adi-kiran/career-flow/graph/badge.svg?token=BCVJENNVTK)](https://codecov.io/gh/adi-kiran/career-flow)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/adi-kiran/career-flow)
 <!--Badges-->
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/fork" target="blank">
-<img src="https://img.shields.io/github/forks/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp forks"/>
+<a href="https://github.com/adi-kiran/career-flow/fork" target="blank">
+<img src="https://img.shields.io/github/forks/adi-kiran/career-flow?style=flat-square" alt="career Flow"/>
 </a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp stars"/>
+<a href="https://github.com/adi-kiran/career-flow/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/adi-kiran/career-flow?style=flat-square" alt="career flow stars"/>
 </a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues" target="blank">
-<img src="https://img.shields.io/github/issues/adi-kiran/burnout-healthgoalsapp?style=flat-square" alt="burnout-healthgoalsapp issues"/>
+<a href="https://github.com/adi-kiran/career-flow/issues" target="blank">
+<img src="https://img.shields.io/github/issues/adi-kiran/career-flow?style=flat-square" alt="career flow issues"/>
 </a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/issues" target="blank">
-<img src="https://img.shields.io/github/issues-closed/adi-kiran/burnout-healthgoalsapp" alt="burnout-healthgoalsapp issues closed"/>
+<a href="https://github.com/adi-kiran/career-flow/issues" target="blank">
+<img src="https://img.shields.io/github/issues-closed/adi-kiran/career-flow" alt="career flow issues closed"/>
 </a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/graphs/contributors" alt="Contributors">
-<img src="https://img.shields.io/github/contributors/adi-kiran/burnout-healthgoalsapp" /></a>
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/graphs/commit-activity" alt="commit activity">
-<img src="https://img.shields.io/github/commit-activity/w/adi-kiran/burnout-healthgoalsapp" /></a> 
+<a href="https://github.com/adi-kiran/career-flow/graphs/contributors" alt="Contributors">
+<img src="https://img.shields.io/github/contributors/adi-kiran/career-flow" /></a>
+<a href="https://github.com/adi-kiran/career-flow/graphs/commit-activity" alt="commit activity">
+<img src="https://img.shields.io/github/commit-activity/w/adi-kiran/career-flow" /></a> 
 
-<a href="https://github.com/adi-kiran/burnout-healthgoalsapp/discussions" alt="discussion">
-<img src="https://img.shields.io/github/discussions/adi-kiran/burnout-healthgoalsapp" /></a> 
+<a href="https://github.com/adi-kiran/career-flow/discussions" alt="discussion">
+<img src="https://img.shields.io/github/discussions/adi-kiran/career-flow" /></a> 
 
-<a href="https://img.shields.io/github/repo-size/adi-kiran/burnout-healthgoalsapp" alt="repo size">
-<img src="https://img.shields.io/github/repo-size/adi-kiran/burnout-healthgoalsapp" /></a>
+<a href="https://img.shields.io/github/repo-size/adi-kiran/career-flow" alt="repo size">
+<img src="https://img.shields.io/github/repo-size/adi-kiran/career-flow" /></a>
 
 <img src ="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/39e731f7-2f06-4f8a-b9a3-5f86836e1ad9" width='800'>
 
