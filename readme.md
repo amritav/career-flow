@@ -352,7 +352,7 @@ If you have any questions, need help, or want to provide feedback about the J-Tr
 
 Your inquiries and suggestions are always welcome!
 
-## Team Members
+## Contributors
 <center>
   <table>
     <tr>
