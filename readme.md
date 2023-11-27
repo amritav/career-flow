@@ -1,228 +1,155 @@
+<br />
 
-[![GitHub license](https://img.shields.io/github/license/kingan1/application-tracking-system)](https://github.com/kingan1/application-tracking-system/blob/main/LICENSE)
-[![DOI](https://zenodo.org/badge/715832425.svg)](https://zenodo.org/doi/10.5281/zenodo.10158208)
+<div  align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://github.com/adi-kiran/career-flow/assets/40449660/8c9037a2-1800-484b-a1a8-f05ca8e3aa82" alt="Logo" width="65" height="65">
+  </a>
+  <h3 align="center">Career Flow</h3>
+  <p align="center">
+    🚀Streamline Your Job Application Process! 🚀
+    <br />
+    <a href="https://adi-kiran.github.io/career-flow/"><strong>Explore the API docs »</strong></a>
+    <br />
+    <br />
+    <a href="">View Demo</a>
+    ·
+    <a href="https://github.com/adi-kiran/career-flow/issues/new"]>Report Bug</a>
+    ·
+    <a href="https://github.com/adi-kiran/career-flow/issues/new">Request Feature</a>
+  </p>
+</div>
+<br>
+<br>
+<br>
+
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![DOI](https://zenodo.org/badge/698975832.svg)](https://zenodo.org/doi/10.5281/zenodo.10158208)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+![Build Status](https://github.com/adi-kiran/career-flow/actions/workflows/frontend_CI_CD.yml/badge.svg)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+![last commit](https://img.shields.io/github/last-commit/adi-kiran/career-flow)
+[![](https://tokei.rs/b1/github/adi-kiran/career-flow?branch=main)](https://github.com/adi-kiran/career-flow)
+![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/pytest_ci.yml/badge.svg)
+![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/style_checker.yml/badge.svg)
+![github workflow](https://github.com/adi-kiran/career-flow/actions/workflows/syntax_checker.yml/badge.svg)
 [![codecov](https://codecov.io/gh/adi-kiran/career-flow/graph/badge.svg?token=BCVJENNVTK)](https://codecov.io/gh/adi-kiran/career-flow)
-![GitHub issues](https://img.shields.io/github/issues/adi-kiran/career-flow)
-![GitHub issues](https://img.shields.io/github/issues-closed/adi-kiran/career-flow)
-![GitHub top language](https://img.shields.io/github/languages/top/adi-kiran/career-flow)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/adi-kiran/career-flow)
+<!--Badges-->
+<a href="https://github.com/adi-kiran/career-flow/fork" target="blank">
+<img src="https://img.shields.io/github/forks/adi-kiran/career-flow?style=flat-square" alt="career Flow"/>
+</a>
+<a href="https://github.com/adi-kiran/career-flow/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/adi-kiran/career-flow?style=flat-square" alt="career flow stars"/>
+</a>
+<a href="https://github.com/adi-kiran/career-flow/issues" target="blank">
+<img src="https://img.shields.io/github/issues/adi-kiran/career-flow?style=flat-square" alt="career flow issues"/>
+</a>
+<a href="https://github.com/adi-kiran/career-flow/issues" target="blank">
+<img src="https://img.shields.io/github/issues-closed/adi-kiran/career-flow" alt="career flow issues closed"/>
+</a>
+<a href="https://github.com/adi-kiran/career-flow/graphs/contributors" alt="Contributors">
+<img src="https://img.shields.io/github/contributors/adi-kiran/career-flow" /></a>
+<a href="https://github.com/adi-kiran/career-flow/graphs/commit-activity" alt="commit activity">
+<img src="https://img.shields.io/github/commit-activity/w/adi-kiran/career-flow" /></a> 
 
-[![Super Linter](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml/badge.svg)](https://github.com/adi-kiran/career-flow/actions/workflows/super-linter.yml)
+<a href="https://github.com/adi-kiran/career-flow/discussions" alt="discussion">
+<img src="https://img.shields.io/github/discussions/adi-kiran/career-flow" /></a> 
 
-#      Career Flow - Your Job Tracking Assistant
+<a href="https://img.shields.io/github/repo-size/adi-kiran/career-flow" alt="repo size">
+<img src="https://img.shields.io/github/repo-size/adi-kiran/career-flow" /></a>
 
-
-The process of applying for jobs and internships is not a cakewalk. Managing job applications is a time-consuming process. Due to the referrals and deadlines, the entire procedure can be stressful. Our application allows you to track and manage your job application process, as well as regulate it, without the use of cumbersome Excel spreadsheets.
-
-
-Our application keeps track of the jobs you've added to your wish list. It also keeps track of the companies you've already applied to and keeps a list of any rejections. Rather than having the user browse each company's site for potential prospects, our application allows the applicant to search for them directly using basic keywords. Any prospective work offers can then be added to the applicant's wishlist.
+<img src ="https://github.com/adi-kiran/career-flow/assets/40449660/91016c08-fc4e-47a9-8297-cff3c8bcdd5e" width='800'>
 
 
-## Table of contents
+## **🔥 Career Flow: Streamline Your Job Application Process! 🔥**
+ 
+🌟 Welcome to our application, your one-stop hub for optimizing your job application process! We've designed a user-friendly platform to streamline your job hunt, enhance organization, and elevate your success rate.
+ 
+- **Adding Applications: 📥**
+Seamlessly input applications you've applied for or aspire to, simplifying your job search journey. Keep all your prospects in one convenient location.
+ 
+- **Notes for Applications: 📌**
+Stay on top of your game by adding important notes and details for each application. Never miss a crucial point during interviews or follow-ups.
+ 
+- **Sharing Opportunities: 👫**
+Empower your network! Share opportunities with friends effortlessly, fostering a collaborative approach to job hunting.
+ 
+- **Kanban-style Board: 📊**
+Experience an intuitive Kanban-style board, allowing you to visually manage applications through drag-and-drop functionality. Effortlessly organize your prospects.
 
-- [Basic Design](#basic-design)
-- [Demo](#demo)
-- [Improvements](#improvements)
-    + [Resume Builder](#resume-builder)
-    + [Dockerization](#dockerization)
-    + [Email Notification for Job Application Deadlines](#Email-Notification-for-Job-Application-Deadlines)
-- [Roadmap](#roadmap)
-- [Successful Usecases](#successful-usecases)
-- [Future Scope](#future-scope)
-- [Explanation](#explanation)
-- [Project TechStack](#project-techstack)
-- [Installation](#installation)
-    + [Requirements](#requirements)
-    + [Strongly Recommended](#strongly-recommended)
-- [Getting Started](#getting-started)
-    + [Boot](#boot)
-    + [Shutdown](#shutdown)
-- [Hosting the Database](#hosting-the-database)
-    + [Local MongoDB](#local-mongodb)
-- [Third-Party Dependencies](#third-party-dependencies)    
+- **Statistical Insights: 📈**
+Gain valuable insights into your application trends and success rates. Use this data to fine-tune your strategy and improve your chances.
+
+- **Contact Management: 📞 **
+Easily add and manage contacts from various companies, fostering professional relationships beyond just job applications.
+
+- **Resume Upload & Viewing: 📄 **
+Conveniently upload and review your resume within the app, ensuring it's readily available whenever needed, streamlining the application process.
+  
+Happy job hunting! 🚀 With our app's streamlined features and intuitive interface, ace your applications and land your dream job with confidence. Download now and embark on your path to success! 🌟🎉
+
+
+# Table of Contents  
+
+- [Why Choose Burnout?](#-why-choose-burnout)
+- [Walkthrough](#walkthrough)
+- [Application Screenshots:](#application-screenshots)
+  - [Homepage](#homepage)
+  - [Statistics](#statistics)
+  - [My Netwok](#my-network)
+  - [Resume Viewer](#resume-viewer)
+- [Project Techstack:](#project-techstack)
+- [Technical Overview:](#technical-overview)
+- [Third-Party Dependencies](#third-party-dependencies)
+- [Successful Usecase](#successful-usecases)
 - [Troubleshooting](#troubleshooting)
+- [Roadmap](#roadmap)
+- [Contributors](#contributors)
+- [Contribution](#contribution)
 - [License](#license)
-- [How to Contribute](#how-to-contribute)
-- [Team Members](#team-members)
-- [Recommended citation](#recommended-citation)
-- [License](#license)
 
-## Basic Design:
-![Basic Design](https://github.com/prithvish-doshi-17/application-tracking-system/blob/main/resources/Overall%20Design.PNG)
 
-## Samples:
+## **💼 Why choose Career Flow!**
 
-### Login Page / Signup Page
+- **Effortless Application Tracking:** Utilize our Kanban board with drag-and-drop functionality for streamlined application tracking.
 
-The introductory visual interface displayed from which a user is able to register and log into the application.
+- **Contacts Management:** Never miss out on crucial contacts from significant companies; store and access them conveniently.
 
-<p align="center"><img width="700" src="./resources/login.png"></p>
+- **Insightful Analytics:** Understand your application statistics, improve your approach, and reach your daily goals.
 
+- **Engaging Community:** Connect with a supportive community, exchange application insights, and stay updated.
 
-### HomeScreen
+- **Top-notch Security:** We prioritize your data's security, ensuring your information remains private and safeguarded.
 
-The introductory visual interface displayed from which a user is able to access different cards - Waitlisted applications, Waiting for Refereals, Applied Jobs, Application Status.The user can also add cards through this screen.
+In today's competitive job market, organization and connections are crucial for success. We're here to simplify your journey and help you achieve your dream job.
 
-<p align="center"><img width="700" src="./resources/home_screen.png"></p>
+Download now and take charge of your career path! 🚀
 
+![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/career-flow/assets/19224584/c6789f5f-e026-4a60-ae13-618e4bc6db25)
 
-### SearchPage
+# Walkthrough
 
-The interface through which a user is able to search for specific jobs and add them to Waitlisted Applications.
+Link to the implementation video of the Career Flow application: 
 
-1. Navigate to Job search page, search for particular Job.
-2. Click on Add button. Fill in the Details.
-3. Click on Create buttop.
-4. The application will then be saved as per the selected category.
+# Application Screenshots
+ 
+ ## Homepage
 
-<p align="center"><img width="700" src="./resources/search.png"></p>
-<p align="center"><img width="700" src="./resources/newjobdetails1.PNG"></p>
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/ccd92631-ff60-4182-b592-5513ff740b2e">
 
+ ## Statistics
 
-### SearchPage with Salary filter
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/de1068b3-7543-4e6f-9f16-8078e5b73847">
 
-The interface through which a user is able to search for specific jobs based on the salary range selected.
+ ## My Network
 
-1. Navigate to Job search page, search for particular Job and select the salary range from the dropdown.
-2. Click on Search button.
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/e3183b54-3472-4772-912c-862a7fc29ca0">
 
-<p align="center"><img width="700" src="./resources/salaryfilter1.png"></p>
+ ## Resume Viewer
 
-### ResumePage
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/d4c4a13d-d55c-4111-a376-a9d8635d9f58">
 
-1. Navigate to resume Section
-2. Upload any resume file with .PDF extension by selecting the file from local storage. Click Upload.
-3. Click on download button to Download the uploaded file.
-
-<p align="center"><img width="700" src="./resources/resume.png"></p>
-
-## Improvements
-
-### Resume Builder
-
-Introducing a powerful new feature! Users can now create a stunning and ATS-friendly resume with minimal effort. The Automatic Resume Builder simplifies the process by providing a user-friendly form for basic information input. The best part? Your resume is generated as an editable Word document, offering full customization to suit your preferences and style.
-
-Key Features:
-- **Effortless Data Entry**: Quickly provide your basic information, education, skills, and more.
-- **ATS-Friendly**: Ensure compatibility with modern hiring systems.
-- **Customization**: Tailor your resume to your preferences.
-- **Time-Saving**: Automate the formatting and editing process.
-
-![image](https://github.com/sachindoddaguni/application-tracking-system/assets/28365724/9849abd8-6636-4a18-a63e-ee18b5f223bd)
-
-
-
-### Dockerization
-
-We are thrilled to introduce a powerful new feature to JTracker 2.0 – Dockerization! This enhancement brings a multitude of advantages, making your experience with JTracker even better.
-
-#### Why Dockerize JTracker 2.0?
-
-- **Simplified Setup**: With JTracker Dockerized, you no longer need to spend time configuring and installing various dependencies. It's as simple as running a single command.
-- **Consistent Environment**: Docker ensures that JTracker runs consistently across different systems. Say goodbye to the "It works on my machine" problem. Now, your application will work seamlessly for everyone.
-- **Easy Deployment**: Sharing your tool with others becomes effortless. Docker containers can be distributed and executed on any platform with Docker support, making collaboration and deployment hassle-free.
-- **Version Control**: Docker allows you to version your JTracker 2.0 containers. This means you can easily switch between different versions or update to the latest release without compatibility concerns.
-- **Isolation**: Docker containers provide isolation, keeping your tool and its dependencies separate from the host system. This enhances security and minimizes conflicts with other applications.
-- **Scalability**: Docker makes it easy to scale JTracker based on your needs. You can manage multiple containers and even orchestrate them for complex applications using tools like Docker Compose or Kubernetes.
-- **Dependency Management**: All JTracker 2.0 dependencies are defined in code within the Docker container. You won't have to worry about the hassle of managing dependencies on your local system anymore.
-- **Faster Development**: The docker compose file has defined profiles for ui and api development. This simplifies the process to setup environment required for local development.
-
-### Email Notification for Job Application Deadlines
-
-We are excited to introduce a game-changing enhancement to J-Tracker 2.0 - the Email Notification feature! Keeping track of upcoming job application deadlines is now more effortless than ever.
-
-#### How It Works 
-- J-Tracker 2.0 will notify you through an email whenever a new application is created, updated and deleted.
-- Set your job application deadlines within the application.
-- J-Tracker 2.0 will automatically send you email notifications as your application deadlines approach.
-- Stay organized and never miss an important application deadline again.
-
-#### Benefits
-- **Efficiency:** Receive timely reminders, allowing you to prepare and submit your applications promptly.
-- **Reduced Stress:** No more worrying about missed deadlines or last-minute rushes.
-- **Enhanced Productivity:** Focus on your job search while J-Tracker 2.0 handles the scheduling.
-
-This new feature is designed to streamline your job application process further, making J-Tracker 2.0 your ultimate Job Tracking Assistant. With email notifications for upcoming job application deadlines, you can confidently manage your job search and secure your dream job.
-
-#### Version 1.1
-
-- Add headless feature for selenium
-- Fix shutdown.sh
-- Login frontend
-- Add resume storage for users
-- Updated reloading issues
-- Fix linting issues
-
-#### Version 1.0.3
-
-- Updated badges for repository
-- Users database implementation
-- Add logout endpoint and update middleware
-- Implementing search based on salary functionality
-- Login frontend for login and signup functionality
-- Search custom date
-
-
-
-## Roadmap:
-![Roadmap](https://github.com/prithvish-doshi-17/application-tracking-system/blob/main/resources/Roadmap%20-%202.PNG)
-
-## Successful Usecases
-
-### Case Study 1: Improving Job Search Efficiency with J-Tracker 2.0
-
-**Background:**
-Aditya, a recent college graduate from NCSU, had been struggling with his job search. He was applying to numerous positions across different companies, but it was challenging to keep track of each application's status and deadlines. He often missed application deadlines and forgot which companies he had applied to.
-
-**The Problem:**
-Aditya was becoming frustrated and stressed due to the chaotic job application process. He needed a way to streamline his job search and stay organized.
-
-**The Solution:**
-Aditya started using J-Tracker 2.0 to manage his job applications. He added all the jobs he was interested in to his wishlist, tracked their status, and set application deadlines. The Email Notification feature kept him informed about approaching deadlines, ensuring he never missed an important application date.
-
-**The Outcome:**
-With J-Tracker 2.0, Aditya regained control over his job search. He received timely reminders of application deadlines and improved his overall efficiency. Within a few weeks, he secured an interview with a company he had been targeting for a while, and the company was impressed with his organized approach. Ultimately, he got the job and credited J-Tracker 2.0 for helping him achieve his goal.
-
-### Case Study 2: Seamless Collaboration in a University Job Fair
-
-**Background:**
-The career services department at NCSU was organizing a large job fair with participation from multiple companies. Managing the fair's logistics and helping students connect with potential employers was a complex task.
-
-**The Problem:**
-Coordinating the event, scheduling interviews, and keeping track of student applications was a logistical challenge. They needed a solution to streamline the job fair operations.
-
-**The Solution:**
-The career services department at NCSU decided to use J-Tracker 2.0 to manage the job fair. They created profiles for each participating company and added job opportunities. Students could easily browse and add these opportunities to their wishlists, track their application status, and set reminders for interviews.
-
-**The Outcome:**
-J-Tracker 2.0 simplified the job fair coordination. Companies could see how many students were interested in their positions, and students had a clear overview of their job applications. This led to better communication between students and employers. As a result, more students secured internships and job offers during the job fair, and companies found the event well-organized and efficient. J-Tracker 2.0 played a crucial role in fostering a successful and collaborative job fair experience for all participants.
-
-
-## Future Scope: 
-* Include deadline reminders for the application and interview.
-* Add a feature that allows users to attach these reminders to their Google calendar.
-* Incorporate notifications for upcoming deadlines. 
-* Add a storage option for resumes and cover letters so they can be saved for future use.
-* Include a direct link to the company's application site when the wishlist item is clicked.
-* Include a link to the university’s career fair page. 
-* Direct connection to Linkedin, allowing for the addition of job opportunities to the wishlist.
-* Improve keyword search to improve specifications such as pay range, employment location, and so on.
-* An option to maintain separate profiles for job tracking.
-
-
-## Explanation:
-
-Currently, we have four fundamental steps in our project:
-
-
-1. The position for which you have applied
-2. The job you want to apply for, without a referral
-3. The job at which you have faced rejection, and
-4. The job you're waiting for a referral.
-
-
-Any details in any table can be modified at any time during the process.
-
-
+### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
 
 # Project TechStack
 
@@ -230,15 +157,28 @@ Any details in any table can be modified at any time during the process.
  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="20" height="20"/> MongoDB </br>
  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python" width="20" height="20"/> Python </br>
 
+# Technical Overview
 
-## Installation:
+This application is a React-based web application that runs in the user's web browser. It provides the following key features:
+
+- **User Authentication**: Upon logging in, the application creates and stores tokens locally on the user's machine to maintain user sessions securely.
+
+- **Access Control**: Authenticated users have access to multiple pages and features within the application, ensuring a personalized and controlled user experience.
+
+- **Backend Server**: The application relies on a Flask server to serve various user requests. The server interacts with a MongoDB database to fetch and store data as needed, ensuring smooth functionality and data persistence.
+
+With these components working together, the application delivers a secure and feature-rich experience to its users.
+
+ # Getting started
+ 
+Follow these steps to set up and run the application on your local machine.
+
 ### Requirements:
 * [Python](https://www.python.org/downloads/) (recommended >= 3.8)
 * [pip](https://pip.pypa.io/en/stable/installation/) (Latest version 21.3 used as of 11/3)
 * [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
 * Docker
-
-## Getting Started:
+ 
 ### Bring up the whole environment with Docker:
 To run a testing environment, run:
 ```
@@ -272,11 +212,11 @@ This is required if you are not using docker.
 ``` 
 mongod 
 ```
-* Recommended: Use a GUI such as [Studio 3T](https://studio3t.com/download/) to more easily interact with the database
+      
 
-## Third-Party Dependencies
-
- Frontend:
+  # Third-Party Dependencies
+  
+  Frontend:
 
 | Package Name        | Version           | License  |
 | ------------- |:-------------:| -----:|
@@ -298,61 +238,35 @@ mongod
 | coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
 | selenium | 3.0.2 | Apache 2.0 license |
 
+## Successful Usecases
+  Our product has soared to success, backed by numerous success stories and rave feedback from users. Here are a few case studies showcasing the remarkable advantages of our application: [Case Studies](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
+
+The success of these individuals and companies is a testament to the effectiveness of our application in revolutionizing the job application landscape.
+ 
 ## Troubleshooting
 
-If you encounter issues while using J-Tracker 2.0, here are some common problems and their solutions:
+If you encounter issues while using Career Flow, here are some common problems and their solutions: [Tutorials.md](https://github.com/adi-kiran/career-flow/edit/main/Troubleshooting.md)
 
-### Problem 1: Unable to Start the Application
+## Roadmap
 
-**Symptoms:** The application doesn't start, or you encounter an error when trying to run it.
+- [x] ~Make the pages modular using React~
+    - [x] ~Login/SignUp~ 
+    - [x] ~Homepage~
+    - [x] ~Events~
+    - [x] ~Contact Us~
+    - [x] ~Profile~    
+- [x] ~Allow users to enroll in events~
+- [x] ~Generate graphs for user's calories~
+- [x] ~Show consumed food history~
+- [ ] Include UI testing Framework
+- [ ] Allow sharing/exporting user data
+- [ ] Dockerise entire application for easy deployment
+- [ ] TDEE Calculator
 
-**Solution:**
-1. Ensure you have met the installation requirements mentioned in the README.
-2. Double-check that you have the required versions of Python and npm installed.
-3. Make sure you have executed the setup script using `./setup.sh` to install necessary packages.
-4. Check for any error messages in the console output and address them accordingly.
-
-### Problem 2: Database Connection Issue
-
-**Symptoms:** The application fails to connect to the database, whether local or hosted on MongoDB Atlas.
-
-**Solution:**
-1. Verify that you have followed the instructions for hosting the database correctly, depending on whether you're using a local MongoDB or MongoDB Atlas.
-2. Double-check the connection string in your `app.py` file and ensure it's correct.
-3. If you're using MongoDB Atlas, ensure that you've created an `application.yml` file with the correct credentials.
-4. If you're experiencing issues with repository secrets for CI, make sure they are correctly added in the repository settings.
-
-### Problem 3: Dockerization Issues
-
-**Symptoms:** Problems with Dockerizing the application.
-
-**Solution:**
-1. Ensure you have Docker installed and running.
-2. Check the Docker setup instructions in the README and follow them carefully.
-3. If you encounter issues with containerization, check for any specific error messages and research them or seek help from the project's community.
-
-### Problem 4: Email Notifications Not Working
-
-**Symptoms:** You're not receiving email notifications for job application deadlines.
-
-**Solution:**
-1. Make sure you've set your job application deadlines within the application.
-2. Confirm that your email notification settings are correctly configured.
-3. Check your spam folder for any misplaced notifications.
-4. If you're still facing issues, refer to the project's documentation for the email notification feature or seek help from the project's community.
-
-
-
-
-
-
-## Have Questions or Need Assistance?
-
-If you have any questions, need help, or want to provide feedback about the J-Tracker 2.0, feel free to contact us at aditya.a.chitlangia@gmail.com. We're here to assist you and make your resume creation experience as smooth as possible.
-
-Your inquiries and suggestions are always welcome!
-
-## Contributors
+:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
+   
+   # Contributors
+   
 <center>
   <table>
     <tr>
@@ -364,13 +278,15 @@ Your inquiries and suggestions are always welcome!
   </table>
 </center>
 
- ## Contribution
+# Contribution
   Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/career-flow/blob/main/Contributing.md) file for instructions on how to contribute to our repository.
 
-## Recommended Citation
+# Recommended Citation
 Career Flow Nirmal Sharon Joji, Adithya Kiran, Amrita Visalam, Diksha Maurya. 2023.
 [https://github.com/adi-kiran/career-flow]
 
-## License
+# License
 The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
+  
+  
 
