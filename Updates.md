@@ -34,7 +34,7 @@ Updated Login Page
 ![LoginPage](https://github.com/adi-kiran/career-flow/assets/36990588/776ab398-f1cc-409a-9927-50e3ce99e489)
 
 # 2. Add Notes to Jobs and Email Job Details
-We now support adding notes to your saved job applications so you don't forget it! Also job details can now be shared to any email id. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-application-note--share-application))
+We now support adding notes to your saved job applications so you don't forget it! Also job details can now be shared to any email ID. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-application-note--share-application))
 
 # 3. Statistics Page
 We added a new page that displays metrics for the users job search. It shows graphs of the number of jobs created over the past 6 months, a ob search funnel graph of the number of jobs saved (wishlisted), number of applications submitted, number of interviews given, etc. We also show the user their latest activity, which is the applications that were recently created or updated. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#statistics-page))
@@ -47,12 +47,12 @@ The network page allows users to quickly save contacts and grow their network so
 # 5. Resume Viewer
 The resume page now allows users to view their resume in the browser itself, instead of needing to download it to view it. They can also directly print teir resume from this tab! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#upload-view-and-download-resume))
 
-# 6. Repo Quality
+# 6. Repository Quality
 
 ### A. Documentation
 
 ##### API Documentation
-We have generated API documentation using pydoc3 and hosted it on github pages. Previously the API docs were incomplete and stored in a readme file. [Documentaation](https://adi-kiran.github.io/career-flow/)
+We have generated API documentation using pydoc3 and hosted it on Github pages. Previously the API docs were incomplete and stored in a readme file. [Documentaation](https://adi-kiran.github.io/career-flow/)
 
 ##### Tutorials
 We have added mini tutorial GIFs to make it easier for new users to follow and understand how the application works. [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
@@ -61,7 +61,7 @@ We have added mini tutorial GIFs to make it easier for new users to follow and u
 We have updated the troubleshooting guides and added solutions to issues we identified and resolved while developing the application. [Troubleshooting.md](https://github.com/adi-kiran/career-flow/blob/main/Troubleshooting.md)
 
 ### B. Testing
-We added unit tests to increase the coverage score from 30% to 60% and have atleast one unit test for each endpoint. We also configured the pytest_ci.yml github action to run tese tests whenever a commit is made and to push the coverage report to codecov.
+We added unit tests to increase the coverage score from 30% to 60% and have atleast one unit test for each endpoint. We also configured the pytest_ci.yml Github action to run tese tests whenever a commit is made and to push the coverage report to Codecov.
 
 ### C. Readme
 We've added a lot of badges and updated most of the readme to make it easy to uderstand whats going on for someone new and so that you can quickly setup and use the project.
