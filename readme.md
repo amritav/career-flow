@@ -180,8 +180,8 @@ Follow these steps to set up and run the application on your local machine.
 * Docker
 
 ## With Docker
-#### Bring up the whole environment with Docker:
-To run a testing environment, run:
+#### Running the entire application (Bring up the whole environment with Docker)
+To start the application environment, run:
 ```
 docker compose --profile all up
 ```
@@ -191,16 +191,16 @@ This will run all components required for the system. It will spwan up the backe
 docker compose --profile all down
 ```
 This will stop and remove all active containers spawned up by the docker compose file
-#### Local UI development:
+#### For UI development
 ```
 docker compose --profile ui-dev down
 ```
-This profile spawns up all components except the UI component. This simplifies local development where UI code can be quickly modified and run manually and the dependent components are managed by docker.
+This profile spawns up all components except the UI component. This simplifies local development where UI code can be quickly modified and run manually (```npm run start``` on the local machine) and the dependent components are managed by docker.
 #### Local API development:
 ```
 docker compose --profile api-dev down
 ```
-This profile spawns up all components except the API component. This simplifies local development where API code can be quickly modified and run manually and the dependent components are managed by docker. This requires a small change:
+This profile spawns up all components except the API component. This simplifies local development where API code can be quickly modified and run manually (```flask run``` on the local machine) and the dependent components are managed by docker. This requires a small change:
 1. Add db_username env variable in your system with value localhost.
 
 ## Local Development
