@@ -112,7 +112,7 @@ So, are you ready to take the leap towards a healthier, happier you? Dive into *
  
 In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
 
-![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/burnout-healthgoalsapp/assets/19224584/c6802e8e-5ff7-4ac5-ba11-560b2e84cb50) 
+![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/career-flow/assets/19224584/c6789f5f-e026-4a60-ae13-618e4bc6db25)
 
 # Walkthrough
 
