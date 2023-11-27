@@ -38,9 +38,11 @@ We now support adding notes to your saved job applications so you don't forget i
 
 # 3. Statistics Page
 We added a new page that displays metrics for the users job search. It shows graphs of the number of jobs created over the past 6 months, a ob search funnel graph of the number of jobs saved (wishlisted), number of applications submitted, number of interviews given, etc. We also show the user their latest activity, which is the applications that were recently created or updated. (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#statistics-page))
+![WhatsApp Image 2023-11-26 at 19 43 45](https://github.com/adi-kiran/career-flow/assets/40449660/16e98809-2dfc-474a-8a1d-f6dc22033894)
 
 # 4. Network Page
 The network page allows users to quickly save contacts and grow their network so its easy to reach out when applying for jobs. They can also export their contacts to a CSV file! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#add-search-and-export-contacts))
+![WhatsApp Image 2023-11-26 at 19 43 45 (1)](https://github.com/adi-kiran/career-flow/assets/40449660/2067cef1-872e-44b9-92ee-0de31a5a6cf3)
 
 # 5. Resume Viewer
 The resume page now allows users to view their resume in the browser itself, instead of needing to download it to view it. They can also directly print teir resume from this tab! (GIF in [Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md#upload-view-and-download-resume))
