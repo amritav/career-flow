@@ -88,10 +88,12 @@ Conveniently upload and review your resume within the app, ensuring it's readily
   
 Happy job hunting! 🚀 With our app's streamlined features and intuitive interface, ace your applications and land your dream job with confidence. Download now and embark on your path to success! 🌟🎉
 
+Navigate your career with CareerFlow 🚀 – Where your job search finds its perfect current! 🌟
+
 
 # Table of Contents  
 
-- [Why Choose Burnout?](#-why-choose-burnout)
+- [Why Choose Career Flow?](#-why-choose-careerflow)
 - [Walkthrough](#walkthrough)
 - [Application Screenshots:](#application-screenshots)
   - [Homepage](#homepage)
