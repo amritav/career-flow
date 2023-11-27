@@ -303,7 +303,6 @@ Career Flow Nirmal Sharon Joji, Adithya Kiran, Amrita Visalam, Diksha Maurya. 20
 [https://github.com/adi-kiran/career-flow]
 
 # License
-The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
-  
+This project is licensed under the MIT License. Please refer to [LICENSE](https://github.com/adi-kiran/career-flow/blob/main/LICENSE) for more details.
   
 
