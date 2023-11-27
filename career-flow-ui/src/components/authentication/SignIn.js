@@ -13,14 +13,12 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import axios from "axios";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useToken from "./useToken.js";
 import { useHistory } from "react-router-dom";
 import { updateAppState } from "./../../appReducer/applicationReducer.js";
 
 function SignIn(props) {
   const history = useHistory();
-  const defaultTheme = createTheme();
 
   const [loginForm, setloginForm] = useState({
     email: "",
@@ -74,7 +72,6 @@ function SignIn(props) {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -85,7 +82,7 @@ function SignIn(props) {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -143,7 +140,6 @@ function SignIn(props) {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
   );
 }
 
