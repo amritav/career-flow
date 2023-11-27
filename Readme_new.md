@@ -71,19 +71,19 @@ Seamlessly input applications you've applied for or aspire to, simplifying your 
 - **Notes for Applications: 📌**
 Stay on top of your game by adding important notes and details for each application. Never miss a crucial point during interviews or follow-ups.
  
-- **Sharing Opportunities: 👫 **
+- **Sharing Opportunities: 👫**
 Empower your network! Share opportunities with friends effortlessly, fostering a collaborative approach to job hunting.
  
-- **Kanban-style Board: 📊 **
+- **Kanban-style Board: 📊**
 Experience an intuitive Kanban-style board, allowing you to visually manage applications through drag-and-drop functionality. Effortlessly organize your prospects.
 
-- **Statistical Insights: 📈 **
+- **Statistical Insights: 📈**
 Gain valuable insights into your application trends and success rates. Use this data to fine-tune your strategy and improve your chances.
 
-- **Contact Management: 📞  **
+- **Contact Management: 📞 **
 Easily add and manage contacts from various companies, fostering professional relationships beyond just job applications.
 
-- **Resume Upload & Viewing: 📄  **
+- **Resume Upload & Viewing: 📄 **
 Conveniently upload and review your resume within the app, ensuring it's readily available whenever needed, streamlining the application process.
   
 Happy job hunting! 🚀 With our app's streamlined features and intuitive interface, ace your applications and land your dream job with confidence. Download now and embark on your path to success! 🌟🎉
@@ -106,42 +106,47 @@ Happy job hunting! 🚀 With our app's streamlined features and intuitive interf
 - [License](#license)
 
 
-# **💡 Why Choose Burnout?**
- 
-- **Comprehensive Tracking:** From what you eat to how much you burn, monitor everything in one place.
-  
-- **Diverse Fitness Events:** Never fall into the monotony of routine. Stay excited about fitness with new events to join regularly. 
-  
-- **Personalized Insights:** Understand your body and habits better with data-driven feedback.
-  
-- **Community Support:** Engage with a like-minded community, exchange tips, and stay motivated.
-  
-- **Security:** Your data is precious, and we guard it like our own. Rest assured, your information stays private and secure.
- 
-In today's fast-paced world, maintaining health is a challenge. But with the right tools and community, this challenge becomes an enjoyable journey. And Burnout is here to make sure of that.
+## **💼 Why choose Career Flow!**
+
+- **Effortless Application Tracking:** Utilize our Kanban board with drag-and-drop functionality for streamlined application tracking.
+
+- **Contacts Management:** Never miss out on crucial contacts from significant companies; store and access them conveniently.
+
+- **Insightful Analytics:** Understand your application statistics, improve your approach, and reach your daily goals.
+
+- **Engaging Community:** Connect with a supportive community, exchange application insights, and stay updated.
+
+- **Top-notch Security:** We prioritize your data's security, ensuring your information remains private and safeguarded.
+
+In today's competitive job market, organization and connections are crucial for success. We're here to simplify your journey and help you achieve your dream job.
+
+Download now and take charge of your career path! 🚀
 
 ![ezgif com-video-to-gif (1)](https://github.com/adi-kiran/career-flow/assets/19224584/c6789f5f-e026-4a60-ae13-618e4bc6db25)
 
 # Walkthrough
 
-Link to the implementation video of the BurnOut application: [Video](https://www.youtube.com/watch?v=Ozbn9nNFr1Y)
-
+Link to the implementation video of the Career Flow application: 
 
 # Application Screenshots
  
  ## Homepage
- 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/17d18cd7-ec23-40f2-b2ab-9f924c5fb6bf">
 
- ## Profile
- 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/b782dda4-cdd9-4cc5-9896-40e85416b3eb">
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/ccd92631-ff60-4182-b592-5513ff740b2e">
 
- ## Events
+ ## Statistics
 
-<img width='600' src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/a6d56638-9138-4448-a17a-cf28be3441ae">
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/de1068b3-7543-4e6f-9f16-8078e5b73847">
 
-### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/Tutorials.md)
+ ## My Netwok
+
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/e3183b54-3472-4772-912c-862a7fc29ca0">
+
+ ## Resume Viewer
+
+<img width='600' src="https://github.com/adi-kiran/career-flow/assets/40449660/d4c4a13d-d55c-4111-a376-a9d8635d9f58">
+
+### :memo: **Note:** Additional screenshots and a mini tutorials can be found here:[Tutorials.md](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
 
 # Project TechStack
 
@@ -165,52 +170,57 @@ With these components working together, the application delivers a secure and fe
  
 Follow these steps to set up and run the application on your local machine.
 
-### Prerequisites
-Before you begin, make sure you have the following installed:
-
-- [Python](https://www.python.org/downloads/)
-- [Node.js](https://nodejs.org/en/download)
-- [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows)
+### Requirements:
+* [Python](https://www.python.org/downloads/) (recommended >= 3.8)
+* [pip](https://pip.pypa.io/en/stable/installation/) (Latest version 21.3 used as of 11/3)
+* [npm](https://nodejs.org/en/) (Latest version 6.14.4 used as of 11/3)
+* Docker
  
- Step 1: 
-  Git Clone the Repository 
-  
-    git clone https://github.com/adi-kiran/burnout-healthgoalsapp.git
+### Bring up the whole environment with Docker:
+To run a testing environment, run:
+```
+docker compose --profile all up
+```
+This will run all components required for the system. It will spwan up the backend component, frontend component, and the db component.
+### Shutdown:
+```
+docker compose --profile all down
+```
+This will stop and remove all active containers spawned up by the docker compose file
+### Local UI development:
+```
+docker compose --profile ui-dev down
+```
+This profile spawns up all components except the UI component. This simplifies local development where UI code can be quickly modified and run manually and the dependent components are managed by docker.
+### Local API development:
+```
+docker compose --profile api-dev down
+```
+This profile spawns up all components except the API component. This simplifies local development where API code can be quickly modified and run manually and the dependent components are managed by docker. This requires a small change:
+1. Add db_username env variable in your system with value localhost.
 
-Step 2:
-   Ensure mongodb is running and execute the below to populate the tables:
-    
-    python insert_event_data.py
-    python insert_food_data.py
-
- Step 3:
-   Navigate to the backend folder and run the following command to start the server:
-    
-    cd backend
-    pip install -r requirements.txt
-    flask run
-
- Step 4:
-   Navigate to the frontend folder and run the below to start the React app:
-    
-    cd frontend
-    npm install 
-    npm start
-    
- Step 5:
-    Open the URL in your browser:  
-      http://127.0.0.1:3000
+## Hosting the Database:
+This is required if you are not using docker.
+### Local MongoDB:
+1. Download [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/)
+2. Follow the [Installion Guide](https://docs.mongodb.com/guides/server/install/)
+3. In  ```app.py```  set  ```'host'```  string to  ```'localhost'```
+4. Run the local database: 
+``` 
+mongod 
+```
       
 
   # Third-Party Dependencies
   
   Frontend:
 
-  | Package Name        | Version           | License  |
+| Package Name        | Version           | License  |
 | ------------- |:-------------:| -----:|
 | material-ui      | 4.12.4 | MIT License |
-| axios      | 1.5.1      |   MIT License |
+| axios      | 1.6.1      |   MIT License |
 
+  
   Backend:
 
    | Package Name        | Version           | License  |
@@ -223,6 +233,7 @@ Step 2:
 | mongomock      | 4.1.2      |   BSD |
 | flasgger      | 0.9.7.1      |   MIT License |
 | coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
+| selenium | 3.0.2 | Apache 2.0 license |
 
   
 ## Roadmap
@@ -256,13 +267,15 @@ Step 2:
   </table>
 </center>
 
-  # Contribution
-  
-  Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/CONTRIBUTING.md) file for instructions on how to contribute to our repository.
+# Contribution
+  Please refer the [CONTRIBUTING.md](https://github.com/adi-kiran/career-flow/blob/main/Contributing.md) file for instructions on how to contribute to our repository.
 
-  # License
-  
-  This project is licensed under the MIT License. Please refer to [LICENSE](https://github.com/adi-kiran/burnout-healthgoalsapp/blob/main/LICENSE) for more details.
+# Recommended Citation
+Career Flow Nirmal Sharon Joji, Adithya Kiran, Amrita Visalam, Diksha Maurya. 2023.
+[https://github.com/adi-kiran/career-flow]
+
+# License
+The project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
   
   
 
