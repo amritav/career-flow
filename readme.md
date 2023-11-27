@@ -206,7 +206,7 @@ This profile spawns up all components except the API component. This simplifies 
 This is required if you are not using docker.
 ### Local MongoDB:
 1. Download [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/)
-2. Follow the [Installion Guide](https://docs.mongodb.com/guides/server/install/)
+2. Follow the [Installation Guide](https://docs.mongodb.com/guides/server/install/)
 3. In  ```app.py```  set  ```'host'```  string to  ```'localhost'```
 4. Run the local database: 
 ``` 
@@ -239,31 +239,40 @@ mongod
 | selenium | 3.0.2 | Apache 2.0 license |
 
 ## Successful Usecases
-  Our product has soared to success, backed by numerous success stories and rave feedback from users. Here are a few case studies showcasing the remarkable advantages of our application: [Case Studies](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
+  Our product has soared to success, backed by numerous success stories and rave feedback from users. Here are a few case studies showcasing the remarkable advantages of our application: [Case Studies](https://github.com/adi-kiran/career-flow/blob/main/case-studies.md)
 
 The success of these individuals and companies is a testament to the effectiveness of our application in revolutionizing the job application landscape.
  
 ## Troubleshooting
 
-If you encounter issues while using Career Flow, here are some common problems and their solutions: [Tutorials.md](https://github.com/adi-kiran/career-flow/edit/main/Troubleshooting.md)
+If you encounter issues while using Career Flow, here are some common problems and their solutions :  [Troubleshooting.md](https://github.com/adi-kiran/career-flow/edit/main/Troubleshooting.md)
 
 ## Roadmap
 
-- [x] ~Make the pages modular using React~
+- [x] ~Revamp UI - Switch to functional react and improve design and styling~
+    - [x] ~Navbar~ 
     - [x] ~Login/SignUp~ 
     - [x] ~Homepage~
-    - [x] ~Events~
-    - [x] ~Contact Us~
-    - [x] ~Profile~    
-- [x] ~Allow users to enroll in events~
-- [x] ~Generate graphs for user's calories~
-- [x] ~Show consumed food history~
+    - [x] ~Resume~
+    - [x] ~Contact Us~    
+- [x] ~Statistics Page~
+    - [x] ~Application Conversion Funnel Graph~
+    - [x] ~Jobs created per month in the last 6 months Graph~
+    - [x] ~General Stats~ 
+- [x] ~View Resume in the browser window~
+- [x] ~My Network Page~
+    - [x] ~Add contacts feature~
+    - [x] ~Export contacts as csv~
+- [x] ~Add notes to job applications~
+- [x] ~Share job application details via email~ 
 - [ ] Include UI testing Framework
-- [ ] Allow sharing/exporting user data
-- [ ] Dockerise entire application for easy deployment
-- [ ] TDEE Calculator
+- [ ] Import applications and contacts data from csv/json
+- [ ] Scrape jobs from the internet and show suggestions
+- [ ] Save multiple resumes to be stored with names/tags
+- [ ] Save and tag multiple types of documents (e.g. CV, Certificates, etc)
+- [ ] Customizable lanes on the job tracker board
 
-:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/burnout-healthgoalsapp/issues
+:bulb: **Tip:** More enhancements/fixes can be found here : https://github.com/adi-kiran/career-flow/issues
    
    # Contributors
    
