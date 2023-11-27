@@ -20,6 +20,7 @@ Hey there, career enthusiast! 🌟 Dive deep into the intricacies of Career Flow
 
 ## Statistics Page
 ### View Statistics
+![ezgif com-video-to-gif (2)](https://github.com/adi-kiran/career-flow/assets/19224584/31550ba3-88b5-411a-bbc9-930797f128dd)
 
 ## Resume
 ### Upload, View and Download Resume
