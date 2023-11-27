@@ -2,7 +2,7 @@
 
 <div  align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/40449660/60dbeb11-6b52-4856-99ff-978d901f7b66" alt="Logo" width="80" height="80">
+    <img src="https://github.com/adi-kiran/career-flow/assets/40449660/8c9037a2-1800-484b-a1a8-f05ca8e3aa82" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">Career Flow</h3>
   <p align="center">
@@ -58,7 +58,7 @@
 <a href="https://img.shields.io/github/repo-size/adi-kiran/career-flow" alt="repo size">
 <img src="https://img.shields.io/github/repo-size/adi-kiran/career-flow" /></a>
 
-<img src ="https://github.com/adi-kiran/burnout-healthgoalsapp/assets/27075012/39e731f7-2f06-4f8a-b9a3-5f86836e1ad9" width='800'>
+<img src ="https://github.com/adi-kiran/career-flow/assets/40449660/91016c08-fc4e-47a9-8297-cff3c8bcdd5e" width='800'>
 
 
 ## **🔥 Burnout: Elevate Your Health & Fitness Game! 🔥**
