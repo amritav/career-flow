@@ -16,7 +16,7 @@ exit_result () {
 }
 
 echo -e "Navigating to frontend directory..."
-cd ./frontend || exit
+cd ./career-flow-ui || exit
 echo -e "Attempting to install NPM packages..."
 npm install
 exit_result $? "NPM package installation"

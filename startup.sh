@@ -21,7 +21,7 @@ flask run &
 exit_result $? "Backend boot"
 
 echo -e "Navigating to frontend..."
-cd ../frontend || exit
+cd ../career-flow-ui || exit
 echo -e "Attempting to start frontend..."
 npm start &
 echo -e "(Frontend takes some time to load, please be patient...)"
