@@ -11,7 +11,7 @@ services:
       - ui-dev
       - all
   frontend:
-    build: ./frontend/
+    build: ./career-flow-ui/
     ports:
       - 3000:3000
     profiles:

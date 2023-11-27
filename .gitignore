@@ -6,6 +6,8 @@
 package-lock 3.json
 frontend/yarn.lock
 
+cov.xml
+
 # Log file
 *.log
 
