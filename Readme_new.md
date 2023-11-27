@@ -235,7 +235,11 @@ mongod
 | coverage      | 7.2.7      |   Apache Software License (Apache-2.0) |
 | selenium | 3.0.2 | Apache 2.0 license |
 
-  
+## Successful Usecases
+  Our product has soared to success, backed by numerous success stories and rave feedback from users. Here are a few case studies showcasing the remarkable advantages of our application: [Case Studies](https://github.com/adi-kiran/career-flow/blob/main/Tutorials.md)
+
+The success of these individuals and companies is a testament to the effectiveness of our application in revolutionizing the job application landscape.
+ 
 ## Roadmap
 
 - [x] ~Make the pages modular using React~
