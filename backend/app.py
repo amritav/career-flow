@@ -568,8 +568,8 @@ class ResumeDocument(db.Document):
         """
         return { "fullName": self.firstName, "lastName": self.lastName,  "email": self.email}
 
-@unittest.skip
-def get_new_user_id():
+
+def get_new_user_id(): # pragma: no cover
     """
     Returns the next value to be used for new user
 
@@ -585,8 +585,8 @@ def get_new_user_id():
 
     return new_id + 1
 
-@unittest.skip
-def get_new_application_id(user):
+
+def get_new_application_id(user): # pragma: no cover
     """
     Returns the next value to be used for new application
 
@@ -603,8 +603,8 @@ def get_new_application_id(user):
         new_id = max(new_id, a["id"])
 
     return new_id + 1
-@unittest.skip
-def send_email(to_email, subject, message):
+
+def send_email(to_email, subject, message): # pragma: no cover
     # Set up your email and password here, or use environment variables
     gmail_user = "amoghmahesh14@gmail.com"
     gmail_password = os.getenv("email_password")
@@ -627,8 +627,8 @@ def send_email(to_email, subject, message):
         print("Email sent successfully!")
     except Exception as e:
         print("Email could not be sent. Error: {}".format(str(e)))
-@unittest.skip
-def email_reminders():
+
+def email_reminders(): # pragma: no cover
     users = Users.objects({})
     for user in users:
         current_applications =  user["applications"]
@@ -642,8 +642,8 @@ def email_reminders():
                     send_email(to_email, subject, message)
                 except:
                     return jsonify({"error": "EMAIL wasn't sent"}), 400
-@unittest.skip
-def generate_pdf(data):
+
+def generate_pdf(data): # pragma: no cover
     doc = Document()
 
     # Set page margins to fit within one page
@@ -734,7 +734,7 @@ def generate_pdf(data):
 
 
 @app.route('/resumebuilder', methods=['POST'])
-def form_builder():
+def form_builder(): # pragma: no cover
     try:
         # Assuming the request data is in JSON format
         data = request.json
@@ -754,8 +754,7 @@ def form_builder():
         print(f"Error processing form data: {str(e)}")
         return "Error processing form data", 500
 
-@unittest.skip
-def get_job_app_status(applications):
+def get_job_app_status(applications): # pragma: no cover
     """
     Returns the number of job applications in each job status
 
@@ -795,8 +794,9 @@ def get_job_app_status(applications):
         {"name": "Rejected", "count": job_app_status["Rejected"]},
     ]
     return res,job_app_status["Applied"],job_app_status["Interviewed"]
-@unittest.skip
-def get_last_six_months_job_counts(applications):
+
+
+def get_last_six_months_job_counts(applications): # pragma: no cover
     """
     Returns the number of jobs created in each month for the last 6 months
 
@@ -842,8 +842,7 @@ def get_last_six_months_job_counts(applications):
         for key in list(result_dict.keys())[::-1]
     ]
     return res
-@unittest.skip
-def get_last_four_jobs(applications):
+def get_last_four_jobs(applications): # pragma: no cover
     """
     Returns the latest 4 job application details based on the date field in the job application.
 
