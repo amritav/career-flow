@@ -361,6 +361,7 @@ def upload_resume():
         if not hasattr(user, 'resume'):
             # There is no file
             user.resume.put(file.stream, content_type=file.content_type, filename=file.filename)
+            #user.save() is saving the changes made to the user object, 
             user.save()
             return jsonify({"message": "resume successfully uploaded"}), 200
         else:
