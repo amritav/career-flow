@@ -448,6 +448,7 @@ def fetch_resume():
             return jsonify({"error": "No resume uploaded"}), 404
         user.resume.seek(0)  # Reset the file pointer to the beginning
         file_like_object = BytesIO(user.resume.read())
+        #sending file response
         return send_file(
             file_like_object,
             mimetype="application/pdf",
