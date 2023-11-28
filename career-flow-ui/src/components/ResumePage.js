@@ -58,6 +58,7 @@ function ResumePage(props) {
       });
   };
 
+  //functionality to download resume
   function downloadResume() {
     axios.get('http://localhost:5000/downloadresume', {
       headers: {
