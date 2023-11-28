@@ -416,6 +416,7 @@ def get_resume():
             return jsonify({"error": "resume could not be found"}), 400
     
         file_like_object = BytesIO(user.resume.read())
+        #Send the PDF file as a response
         if hasattr(user, 'resume'):
             response = send_file(
             file_like_object,
