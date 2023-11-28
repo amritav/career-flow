@@ -34,6 +34,7 @@ function ResumePage(props) {
     fetchResume();
   }, [props.appState.token]);
 
+  //functionality to upload file
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     console.log(file);
