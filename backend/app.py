@@ -367,6 +367,7 @@ def upload_resume():
         else:
             # There is a file, we are replacing it
             user.resume.replace(file.stream, content_type=file.content_type, filename=file.filename)
+            #user.save() is saving the changes made to the user object, 
             user.save()
             return jsonify({"message": "resume successfully replaced"}), 200
     except Exception as e:
