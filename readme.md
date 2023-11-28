@@ -262,7 +262,7 @@ If you encounter issues while using Career Flow, here are some common problems a
     - [x] ~Login/SignUp~ 
     - [x] ~Homepage~
     - [x] ~Resume~
-    - [x] ~Contact Us~    
+    - [x] ~Contact Us Page~    
 - [x] ~Statistics Page~
     - [x] ~Application Conversion Funnel Graph~
     - [x] ~Jobs created per month in the last 6 months Graph~
@@ -271,6 +271,7 @@ If you encounter issues while using Career Flow, here are some common problems a
 - [x] ~My Network Page~
     - [x] ~Add contacts feature~
     - [x] ~Export contacts as csv~
+    - [x] ~Search and Filter contacts~
 - [x] ~Add notes to job applications~
 - [x] ~Share job application details via email~ 
 - [ ] Include UI testing Framework
