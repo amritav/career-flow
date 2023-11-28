@@ -353,6 +353,7 @@ def upload_resume():
         current_user = get_jwt_identity()
         user = Users.objects(email=current_user).first()
         try:
+            #getting the file details 
             file = request.files["file"]
         except:
             return jsonify({"error": "No resume file found in the input"}), 400
